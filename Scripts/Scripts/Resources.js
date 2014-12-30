@@ -3,6 +3,10 @@ var RES_CCBI_NTest = 'Assets/CCBI/NTest.ccbi';
 var RES_CCBI_PTest = 'Assets/CCBI/PTest.ccbi';
 var RES_CCBI_STest = 'Assets/CCBI/STest.ccbi';
 
+var RES_CCBI_NBox = 'Assets/CCBI/Common/NBox.ccbi';
+var RES_CCBI_NButton = 'Assets/CCBI/Common/NButton.ccbi';
+var RES_CCBI_SBox_01 = 'Assets/CCBI/Common/SBox_01.ccbi';
+
 var RES_CCBI_LCore = 'Assets/CCBI/LayerCore/LCore.ccbi';
 
 
@@ -24,6 +28,8 @@ var RES_JSON_world_01_01 = 'Assets/Data/world_01_01.json';
 var RES_BMF_PLIST = 'BMF.plist';
 var RES_BMF_PNG = 'BMF.png';
 var RES_BMF_FNT_CH01_72 = 'BMF_CH01_72.fnt';
+var RES_TEX_PLIST_LayerCore = 'TEX_LayerCore.plist';
+var RES_TEX_PNG_LayerCore = 'TEX_LayerCore.png';
 var RES_TEX_PLIST_UI = 'TEX_UI.plist';
 var RES_TEX_PNG_UI = 'TEX_UI.png';
 
@@ -42,6 +48,9 @@ var g_resources = [
 	{src:RES_CCBI_NTest},
 	{src:RES_CCBI_PTest},
 	{src:RES_CCBI_STest},
+	{src:RES_CCBI_NBox},
+	{src:RES_CCBI_NButton},
+	{src:RES_CCBI_SBox_01},
 	{src:RES_CCBI_LCore},
 	{src:RES_JSON_enemy},
 	{src:RES_C_gray_fsh},
@@ -60,6 +69,8 @@ var g_resources = [
 	{src:RES_BMF_PLIST},
 	{src:RES_BMF_PNG},
 	{src:RES_BMF_FNT_CH01_72},
+	{src:RES_TEX_PLIST_LayerCore},
+	{src:RES_TEX_PNG_LayerCore},
 	{src:RES_TEX_PLIST_UI},
 	{src:RES_TEX_PNG_UI},
 	{src:RES_BGM_BGM_001},

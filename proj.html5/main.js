@@ -105,6 +105,7 @@ var cocos2dApp = cc.Application.extend({
 
             cc.SpriteFrameCache.getInstance().addSpriteFrames(RES_BMF_PLIST);
             cc.SpriteFrameCache.getInstance().addSpriteFrames(RES_TEX_PLIST_UI);
+            cc.SpriteFrameCache.getInstance().addSpriteFrames(RES_TEX_PLIST_LayerCore);
 
             cc.ShaderCache.getInstance().loadDefaultShaders();
 

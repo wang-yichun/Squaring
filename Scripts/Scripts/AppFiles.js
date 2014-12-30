@@ -25,8 +25,12 @@ var appFiles = [
     'Scripts/Scenes/SceneA.js',
 
     // Layers
+    'Scripts/Layers/Common/NBox.js',
+    'Scripts/Layers/Common/NButton.js',
+    'Scripts/Layers/Common/SBox.js',
+    'Scripts/Layers/LayerCore/LCore.js',
+
     'Scripts/Layers/CTest.js',
-    'Scripts/Layers/LCore.js',
     'Scripts/Layers/NTest.js',
     'Scripts/Layers/PTest.js',
     'Scripts/Layers/STest.js'

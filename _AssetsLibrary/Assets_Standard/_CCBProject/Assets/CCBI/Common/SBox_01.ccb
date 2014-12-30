@@ -27,9 +27,9 @@
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>jsController</key>
-		<string>STest</string>
+		<string>SBox</string>
 		<key>memberVarAssignmentName</key>
-		<string></string>
+		<string>box_01</string>
 		<key>memberVarAssignmentType</key>
 		<integer>0</integer>
 		<key>properties</key>
@@ -75,6 +75,18 @@
 				<array>
 					<string>TEX_LayerCore.plist</string>
 					<string>box_yellow</string>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>color</string>
+				<key>type</key>
+				<string>Color3</string>
+				<key>value</key>
+				<array>
+					<integer>254</integer>
+					<integer>253</integer>
+					<integer>253</integer>
 				</array>
 			</dict>
 		</array>
