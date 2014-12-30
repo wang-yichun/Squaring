@@ -1,5 +1,10 @@
-var RES_CCBI_LCore = 'Assets/CCBI/LCore.ccbi';
-var RES_CCBI_NPanel = 'Assets/CCBI/NPanel.ccbi';
+var RES_CCBI_CTest = 'Assets/CCBI/CTest.ccbi';
+var RES_CCBI_NTest = 'Assets/CCBI/NTest.ccbi';
+var RES_CCBI_PTest = 'Assets/CCBI/PTest.ccbi';
+var RES_CCBI_STest = 'Assets/CCBI/STest.ccbi';
+
+var RES_CCBI_LCore = 'Assets/CCBI/LayerCore/LCore.ccbi';
+
 
 var RES_JSON_enemy = 'Assets/Data/enemy.json';
 var RES_C_gray_fsh = 'Assets/Data/gray_fsh.c';
@@ -33,8 +38,11 @@ var RES_TMX_Level_1001 = 'Assets/TMX/Level_1001.tmx';
 var RES_TMX_Level_1002 = 'Assets/TMX/Level_1002.tmx';
 
 var g_resources = [
+	{src:RES_CCBI_CTest},
+	{src:RES_CCBI_NTest},
+	{src:RES_CCBI_PTest},
+	{src:RES_CCBI_STest},
 	{src:RES_CCBI_LCore},
-	{src:RES_CCBI_NPanel},
 	{src:RES_JSON_enemy},
 	{src:RES_C_gray_fsh},
 	{src:RES_C_gray_vsh},
