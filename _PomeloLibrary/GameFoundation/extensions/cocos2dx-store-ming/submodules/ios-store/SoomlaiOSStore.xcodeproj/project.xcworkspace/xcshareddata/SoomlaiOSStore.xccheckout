@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>55EFCA54-E7BA-4AFB-AFB6-A8595DAF5CBB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SoomlaiOSStore</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FA61836E-C63A-4A3A-A0D5-A84165FAF21E</key>
+		<string>ssh://github.com/MeYouGames/GameFoundation.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>extensions/cocos2dx-store/submodules/ios-store/SoomlaiOSStore.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FA61836E-C63A-4A3A-A0D5-A84165FAF21E</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/MeYouGames/GameFoundation.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FA61836E-C63A-4A3A-A0D5-A84165FAF21E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FA61836E-C63A-4A3A-A0D5-A84165FAF21E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GameFoundation</string>
+		</dict>
+	</array>
+</dict>
+</plist>

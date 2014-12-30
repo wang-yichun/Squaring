@@ -1,0 +1,17 @@
+# Ignore files build by xcode
+*.mode*v*
+*.pbxuser
+*.xcbkptlist
+*.xcscheme
+*.xcworkspacedata
+*.xcuserstate
+xcschememanagement.plist
+build/
+.DS_Store
+._.*
+xcuserdata/
+DerivedData/
+/console/cocos2d.pyc
+/console/cocos2d_jscompile.pyc
+/console/cocos2d_new.pyc
+/console/cocos2d_version.pyc

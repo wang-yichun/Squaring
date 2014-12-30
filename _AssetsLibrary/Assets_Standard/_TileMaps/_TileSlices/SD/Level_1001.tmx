@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="7" height="7" tilewidth="80" tileheight="80">
+ <tileset firstgid="1" source="Creater.tsx"/>
+ <layer name="default" width="7" height="7">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA43MOw6AIBAA0QXtALER6Pjo/c/INCYbExOK10wxRkQsNuxw8Ag4EHHiQkJGQUVDx8CNR33+uA+vmAVWedsED0LsmsQAAAA=
+  </data>
+ </layer>
+</map>

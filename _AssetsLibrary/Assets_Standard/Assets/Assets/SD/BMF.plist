@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>BMF_CH01_72</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1,1},{256,192}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{256,192}}</string>
+                <key>sourceSize</key>
+                <string>{256,192}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>BMF.png</string>
+            <key>size</key>
+            <string>{512,256}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:d115999f157d83336e9a30b91c9adeea:8e0729c4a5e6679818646006d5a4cf1b:558940b1752ca7eea05ad5db367ba72f$</string>
+            <key>textureFileName</key>
+            <string>BMF.png</string>
+        </dict>
+    </dict>
+</plist>
