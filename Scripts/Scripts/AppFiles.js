@@ -21,6 +21,9 @@ var appFiles = [
 
     // Def
 
+    // Data
+    'Scripts/Data/Data.js',
+
     // Scenes
     'Scripts/Scenes/SceneA.js',
 
@@ -34,4 +37,5 @@ var appFiles = [
     'Scripts/Layers/NTest.js',
     'Scripts/Layers/PTest.js',
     'Scripts/Layers/STest.js'
+
 ];
