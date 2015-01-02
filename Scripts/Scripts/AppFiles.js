@@ -31,6 +31,7 @@ var appFiles = [
     'Scripts/Layers/Common/NBox.js',
     'Scripts/Layers/Common/NButton.js',
     'Scripts/Layers/Common/SBox.js',
+    'Scripts/Layers/LayerCore/Core.js',
     'Scripts/Layers/LayerCore/LCore.js',
 
     'Scripts/Layers/CTest.js',

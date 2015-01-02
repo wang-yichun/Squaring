@@ -15,8 +15,6 @@ var LCore = cc.Layer.extend({
         gLCore = this;
     },
 
-    stage: undefined,
-
     onDidLoadFromCCB: function () {
         this.rootNode.setTouchEnabled(true);
         this.rootNode.onTouchesBegan = function (touches, event) {
@@ -35,8 +33,7 @@ var LCore = cc.Layer.extend({
             this.controller.onTouchesCancelled();
             return true;
         };
-
-        cc.log();
+        Core.init(this['stage']);
     },
 
     switchMenuItem: function () {
@@ -52,25 +49,24 @@ var LCore = cc.Layer.extend({
     my_layer_enabled: false,
 
     reset: function () {
-        this.box_list = null;
-        this.cur_n = null;
+        Core.reset();
     },
 
     onTouchesBegan: function (touches, event) {
-
+        Core.onTouchesBegan(touches, event);
     },
     onTouchesMoved: function (touches, event) {
-
+        Core.onTouchesMoved(touches,event);
     },
     onTouchesEnded: function (touches, event) {
-
+        Core.onTouchesEnded(touches,event);
     },
-    onTouchesCancelled: function (touches, event) {
-
+    onTouchesCancelled: function () {
+        Core.onTouchesCancelled();
     },
 
     layerInCall: function () {
-        this.prepare_new_game();
+        Core.prepare_new_game();
     },
     layerInStart: function () {
 
@@ -86,54 +82,5 @@ var LCore = cc.Layer.extend({
     },
     layerOutEnd: function () {
 
-    },
-
-    prepare_new_game: function () {
-        Data.init();
-        this.box_lists = [];
-        this.cur_n = 0;
-
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-    },
-
-    create_a_column: function () {
-        var data_column = Data.data[this.cur_n];
-        var box_column = [];
-        for (var m in data_column) {
-            var it = data_column[m];
-            if (it == 1) {
-                var mid_node = cc.Node.create();
-                var ccb_node = cc.BuilderReader.load(RES_CCBI_NBox);
-                mid_node.addChild(ccb_node, 0, 1);
-                mid_node.setPosition(this.loc2pos(cc.p(this.cur_n, m)));
-                this.stage.addChild(mid_node);
-            }
-        }
-
-        this.cur_n++;
-    },
-
-    loc2pos: function (loc) {
-        var pos = cc.pMult(loc, 30);
-        return cc.pAdd(pos, cc.p(13, 20));
     }
 });
