@@ -34,6 +34,7 @@ var LCore = cc.Layer.extend({
             return true;
         };
         Core.init(this['stage']);
+        this.reset();
     },
 
     switchMenuItem: function () {

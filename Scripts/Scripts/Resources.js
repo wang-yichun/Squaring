@@ -4,6 +4,7 @@ var RES_CCBI_PTest = 'Assets/CCBI/PTest.ccbi';
 var RES_CCBI_STest = 'Assets/CCBI/STest.ccbi';
 
 var RES_CCBI_NBox = 'Assets/CCBI/Common/NBox.ccbi';
+var RES_CCBI_NBox_01 = 'Assets/CCBI/Common/NBox_01.ccbi';
 var RES_CCBI_NButton = 'Assets/CCBI/Common/NButton.ccbi';
 var RES_CCBI_SBox_01 = 'Assets/CCBI/Common/SBox_01.ccbi';
 
@@ -49,6 +50,7 @@ var g_resources = [
 	{src:RES_CCBI_PTest},
 	{src:RES_CCBI_STest},
 	{src:RES_CCBI_NBox},
+	{src:RES_CCBI_NBox_01},
 	{src:RES_CCBI_NButton},
 	{src:RES_CCBI_SBox_01},
 	{src:RES_CCBI_LCore},

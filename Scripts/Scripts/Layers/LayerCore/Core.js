@@ -7,22 +7,66 @@ var Core = {
         this.stage = stage_node;
     },
     reset: function () {
-        this.box_list = null;
+        this.box_lists = null;
         this.cur_n = null;
+        this.locByTouchesIdxs = null;
     },
 
     onTouchesBegan: function (touches, event) {
-        var pos_on_stage = this.stage.convertTouchToNodeSpace(touches[0]);
-        this.pos2loc(pos_on_stage);
+        for (var tid = 0; tid < touches.length; tid++) {
+            var pos_on_stage = this.stage.convertTouchToNodeSpace(touches[tid]);
+            var loc = this.pos2loc(pos_on_stage);
+
+            var box = this.box_lists[loc.x][loc.y];
+            if (box) {
+                box.controller.onTouchDown();
+            }
+
+            this.locByTouchesIdxs[touches[tid].getId()] = loc;
+
+        }
     },
     onTouchesMoved: function (touches, event) {
+        for (var tid = 0; tid < touches.length; tid++) {
+            var pos_on_stage = this.stage.convertTouchToNodeSpace(touches[0]);
+            var loc = this.pos2loc(pos_on_stage);
 
+            var old_loc = this.locByTouchesIdxs[touches[tid].getId()];
+            if (cc.pointEqualToPoint(old_loc, loc)) {
+                // 内部移动
+                var box = this.box_lists[loc.x][loc.y];
+                if (box) {
+                    box.controller.onTouchInnerDrag();
+                }
+            } else {
+                var old_box = this.box_lists[old_loc.x][old_loc.y];
+                if (old_box) {
+                    old_box.controller.onTouchOut();
+                }
+                var new_box = this.box_lists[loc.x][loc.y];
+                if (new_box) {
+                    new_box.controller.onTouchIn();
+                }
+            }
+
+            this.locByTouchesIdxs[touches[tid].getId()] = loc;
+        }
     },
     onTouchesEnded: function (touches, event) {
+        for (var tid = 0; tid < touches.length; tid++) {
+            var pos_on_stage = this.stage.convertTouchToNodeSpace(touches[0]);
+            var loc = this.pos2loc(pos_on_stage);
 
+            var box = this.box_lists[loc.x][loc.y];
+            if (box) {
+                box.controller.onTouchUp();
+            }
+
+            this.locByTouchesIdxs[touches[tid].getId()] = null;
+        }
     },
     onTouchesCancelled: function () {
-
+        this.locByTouchesIdxs = new Array(10);
     },
 
     prepare_new_game: function () {
@@ -50,6 +94,8 @@ var Core = {
         this.create_a_column();
         this.create_a_column();
         this.create_a_column();
+
+        this.locByTouchesIdxs = new Array(10);
     },
 
     create_a_column: function () {
@@ -59,14 +105,35 @@ var Core = {
             var it = data_column[m];
             if (it == 1) {
                 var mid_node = cc.Node.create();
-                var ccb_node = cc.BuilderReader.load(RES_CCBI_NBox);
+                var ccb_node = cc.BuilderReader.load(RES_CCBI_NBox_01);
+
+                ccb_node.controller.loc = cc.p(this.cur_n, m);
+
                 mid_node.addChild(ccb_node, 0, 1);
                 mid_node.setPosition(this.loc2pos(cc.p(this.cur_n, m)));
                 this.stage.addChild(mid_node);
+
+                box_column.push(ccb_node);
+            } else {
+                box_column.push(null);
             }
+
+
         }
+        this.box_lists.push(box_column);
 
         this.cur_n++;
+    },
+
+    remove_box_data: function (loc) {
+        this.box_lists[loc.x][loc.y] = null;
+    },
+
+    remove_box_by_loc: function (loc) {
+        var box = this.box_lists[loc.x][loc.y];
+        if (box) {
+            box.getParent().removeFromParent();
+        }
     },
 
     cell_side: 30,
@@ -79,8 +146,7 @@ var Core = {
     },
 
     pos2loc: function (pos) {
-        var pos = cc.pAdd(pos, this.cell_diff2);
-        var loc = cc.p(Math.floor(pos.x / 30), Math.floor(pos.y / 30));
-        cc.log('loc: ' + JSON.stringify(loc));
+        var pos2 = cc.pAdd(pos, this.cell_diff2);
+        return cc.p(Math.floor(pos2.x / 30), Math.floor(pos2.y / 30));
     }
 };
