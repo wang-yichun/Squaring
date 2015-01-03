@@ -11,7 +11,6 @@ var NBox_01 = NBox.extend({
     },
 
     onDidLoadFromCCB: function () {
-        cc.log('Hi, NBox_01!');
         this.reset();
     },
 
@@ -22,10 +21,12 @@ var NBox_01 = NBox.extend({
     },
 
     onTouchDown: function () {
+        this.remove_gfx();
         this.remove();
     },
 
     onTouchIn: function () {
+        this.remove_gfx();
         this.remove();
     },
 
@@ -64,5 +65,14 @@ var NBox_01 = NBox.extend({
                 )
             )
         );
+    },
+
+    remove_gfx: function () {
+        var particle = cc.BuilderReader.load(RES_CCBI_PLight_01);
+        var pos = this.rootNode.getParent().getPosition();
+        particle.setPosition(pos);
+        particle.resetSystem();
+        particle.setAutoRemoveOnFinish(true);
+        Core.stage.addChild(particle);
     }
 });

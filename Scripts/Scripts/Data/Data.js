@@ -7,7 +7,7 @@ var Data = {
     data: [],
 
     height: 9,
-    width: 20,
+    width: 200,
 
     init: function () {
         for (var n = 0; n < this.width; n++) {

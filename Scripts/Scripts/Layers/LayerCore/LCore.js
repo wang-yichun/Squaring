@@ -33,7 +33,7 @@ var LCore = cc.Layer.extend({
             this.controller.onTouchesCancelled();
             return true;
         };
-        Core.init(this['stage']);
+        Core.init(this['stage'], this['stage_gfx']);
         this.reset();
     },
 

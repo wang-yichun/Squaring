@@ -11,7 +11,6 @@ var NBox = cc.Node.extend({
     },
 
     onDidLoadFromCCB: function () {
-        cc.log('Hi, NBox!');
         this.reset();
     },
 

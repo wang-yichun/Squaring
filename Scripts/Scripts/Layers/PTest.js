@@ -11,6 +11,5 @@ var PTest = cc.ParticleSystem.extend({
     },
 
     onDidLoadFromCCB: function () {
-        cc.log('Hi, PTest!');
     }
 });

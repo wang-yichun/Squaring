@@ -3,49 +3,67 @@
  */
 
 var Core = {
-    init: function (stage_node) {
+    init: function (stage_node, stage_gfx_node) {
         this.stage = stage_node;
+        this.stage_gfx = stage_gfx_node;
     },
     reset: function () {
         this.box_lists = null;
         this.cur_n = null;
         this.locByTouchesIdxs = null;
+        this.game_going = false;
+        this.speed = 1;
+        this.win_size = cc.Director.getInstance().getWinSize();
+        this.column_had_removed = 0;
     },
 
     onTouchesBegan: function (touches, event) {
+        if (this.game_going == false) {
+            this.game_start();
+            return;
+        }
         for (var tid = 0; tid < touches.length; tid++) {
             var pos_on_stage = this.stage.convertTouchToNodeSpace(touches[tid]);
             var loc = this.pos2loc(pos_on_stage);
 
-            var box = this.box_lists[loc.x][loc.y];
-            if (box) {
-                box.controller.onTouchDown();
+            if (this.box_lists[loc.x]) {
+                var box = this.box_lists[loc.x][loc.y];
+                if (box) {
+                    box.controller.onTouchDown();
+                }
             }
 
             this.locByTouchesIdxs[touches[tid].getId()] = loc;
-
         }
     },
     onTouchesMoved: function (touches, event) {
+        if (this.game_going == false)  return;
         for (var tid = 0; tid < touches.length; tid++) {
             var pos_on_stage = this.stage.convertTouchToNodeSpace(touches[0]);
             var loc = this.pos2loc(pos_on_stage);
-
             var old_loc = this.locByTouchesIdxs[touches[tid].getId()];
+
             if (cc.pointEqualToPoint(old_loc, loc)) {
                 // 内部移动
-                var box = this.box_lists[loc.x][loc.y];
-                if (box) {
-                    box.controller.onTouchInnerDrag();
+                if (this.box_lists[loc.x]) {
+                    var box = this.box_lists[loc.x][loc.y];
+                    if (box) {
+                        box.controller.onTouchInnerDrag();
+                    }
                 }
             } else {
-                var old_box = this.box_lists[old_loc.x][old_loc.y];
-                if (old_box) {
-                    old_box.controller.onTouchOut();
+
+                if (old_loc && this.box_lists[old_loc.x]) {
+                    var old_box = this.box_lists[old_loc.x][old_loc.y];
+                    if (old_box) {
+                        old_box.controller.onTouchOut();
+                    }
                 }
-                var new_box = this.box_lists[loc.x][loc.y];
-                if (new_box) {
-                    new_box.controller.onTouchIn();
+                if (this.box_lists[loc.x]) {
+                    var new_box = this.box_lists[loc.x][loc.y];
+                    if (new_box) {
+                        new_box.controller.onTouchIn();
+                    }
                 }
             }
 
@@ -53,13 +71,16 @@ var Core = {
         }
     },
     onTouchesEnded: function (touches, event) {
+        if (this.game_going == false)  return;
         for (var tid = 0; tid < touches.length; tid++) {
             var pos_on_stage = this.stage.convertTouchToNodeSpace(touches[0]);
             var loc = this.pos2loc(pos_on_stage);
 
-            var box = this.box_lists[loc.x][loc.y];
-            if (box) {
-                box.controller.onTouchUp();
+            if (this.box_lists[loc.x]) {
+                var box = this.box_lists[loc.x][loc.y];
+                if (box) {
+                    box.controller.onTouchUp();
+                }
             }
 
             this.locByTouchesIdxs[touches[tid].getId()] = null;
@@ -67,6 +88,32 @@ var Core = {
     },
     onTouchesCancelled: function () {
         this.locByTouchesIdxs = new Array(10);
+    },
+
+    game_start: function () {
+        this.game_going = true;
+        gLCore.rootNode.unschedule(this.game_step);
+        gLCore.rootNode.schedule(this.game_step, 1 / 60);
+    },
+
+    game_step: function () {
+        var ori_pos = Core.stage.getPosition();
+        var new_pos = cc.pAdd(ori_pos, cc.p(-Core.speed, 0));
+        Core.stage.setPosition(new_pos);
+
+        var right_pos_in_stage = Core.stage.convertToNodeSpace(cc.p(Core.win_size.width, 0));
+        var right_loc = Core.pos2loc(right_pos_in_stage);
+        var left_pos_in_stage = Core.stage.convertToNodeSpace(cc.p(-Core.cell_side, 0));
+        var left_loc = Core.pos2loc(left_pos_in_stage);
+
+        if (right_loc.x >= Core.cur_n) {
+            Core.create_a_column();
+        }
+
+        if (this.column_had_removed < left_loc.x) {
+            this.column_had_removed = left_loc.x;
+            Core.remove_a_column(left_loc.x);
+        }
     },
 
     prepare_new_game: function () {
@@ -125,14 +172,26 @@ var Core = {
         this.cur_n++;
     },
 
+    remove_a_column: function (n) {
+        for (var m = 0; m < Data.height; m++) {
+            var loc = cc.p(n, m);
+            this.remove_box_by_loc(loc);
+            this.remove_box_data(loc);
+        }
+    },
+
     remove_box_data: function (loc) {
-        this.box_lists[loc.x][loc.y] = null;
+        if (this.box_lists[loc.x]) {
+            this.box_lists[loc.x][loc.y] = null;
+        }
     },
 
     remove_box_by_loc: function (loc) {
-        var box = this.box_lists[loc.x][loc.y];
-        if (box) {
-            box.getParent().removeFromParent();
+        if (this.box_lists[loc.x]) {
+            var box = this.box_lists[loc.x][loc.y];
+            if (box) {
+                box.getParent().removeFromParent();
+            }
         }
     },
 

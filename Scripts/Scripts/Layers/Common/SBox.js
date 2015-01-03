@@ -12,6 +12,5 @@ var SBox = cc.Node.extend({
     },
 
     onDidLoadFromCCB: function () {
-        cc.log('Hi, STest!');
     }
 });
