@@ -19,6 +19,7 @@ var Core = {
 
         this.touch_slow = false;
         this.touch_hold_count = -1;
+        this.related_boxs_loc = null;
     },
 
     refreshTouchSlow: function () {
@@ -189,11 +190,13 @@ var Core = {
                 var ccbi_name = Data.box[it].ccbi_file;
                 var ccb_node = cc.BuilderReader.load(ccbi_name);
 
-                ccb_node.controller.loc = cc.p(this.cur_n, m);
+                ccb_node.controller.loc = cc.p(this.cur_n, parseInt(m));
+                ccb_node.controller.mid_node = mid_node;
+                ccb_node.controller.box_id = it;
 
                 mid_node.addChild(ccb_node, 0, 1);
-                mid_node.setPosition(this.loc2pos(cc.p(this.cur_n, m)));
-                this.stage.addChild(mid_node);
+                mid_node.setPosition(this.loc2pos(cc.p(this.cur_n, parseInt(m))));
+                this.stage.addChild(mid_node, 100);
 
                 box_column.push(ccb_node);
             } else {
@@ -242,5 +245,64 @@ var Core = {
     pos2loc: function (pos) {
         var pos2 = cc.pAdd(pos, this.cell_diff2);
         return cc.p(Math.floor(pos2.x / 30), Math.floor(pos2.y / 30));
+    },
+
+    getBoxAtLoc: function (loc) {
+        if (this.box_lists[loc.x]) {
+            var box = this.box_lists[loc.x][loc.y];
+            if (box) {
+                return box;
+            }
+        }
+        return null;
+    },
+    getRelatedBoxLoc: function (loc) {
+        if (loc == null) return null;
+        var box = this.getBoxAtLoc(loc);
+        if (box == null) return null;
+        var core_box_id = box.controller.box_id;
+
+        var va = [];
+        var vb = [];
+        va.push(box);
+        var contaminate_flag = uuid(6);
+
+        var dir_diff_vec = [cc.p(1, 0), cc.p(0, 1), cc.p(-1, 0), cc.p(0, -1)];
+
+        while (va.length > 0) {
+            var box0 = va.pop();
+            box0.controller.contaminate_flag = contaminate_flag;
+            vb.push(box0.controller.loc);
+
+            var loc0 = box0.controller.loc;
+
+            for (var i = 0; i < dir_diff_vec.length; i++) {
+                var locn = cc.pAdd(loc0, dir_diff_vec[i]);
+                var boxn = this.getBoxAtLoc(locn);
+                if (boxn) {
+                    if (boxn.controller.box_id == core_box_id) {
+                        if (boxn.controller.contaminate_flag != contaminate_flag) {
+                            va.push(boxn);
+                        }
+                    }
+                }
+            }
+        }
+        return vb;
+    },
+    show_related_box: function (enabled) {
+        if (this.related_boxs_loc) {
+            for (var idx in this.related_boxs_loc) {
+                var loc = this.related_boxs_loc[idx];
+                var box = this.getBoxAtLoc(loc);
+                if (box) {
+                    if (enabled) {
+                        box.controller.rot_and_big();
+                    } else {
+                        box.controller.rot_and_big_reset();
+                    }
+                }
+            }
+        }
     }
 };

@@ -59,7 +59,27 @@ var NBox = cc.Node.extend({
         var action_sequence = cc.Sequence.create(action1, action2);
         action_sequence.setTag(1);
         this['core_node'].runAction(action_sequence);
+    },
+
+    rot_and_big: function () {
+        this['mid_node'].setZOrder(200);
+        var action = cc.Spawn.create(
+            cc.ScaleTo.create(0.2, 1.2),
+            cc.RotateTo.create(0.2, 30)
+        );
+        action.setTag(2);
+        this['mid_node'].stopActionByTag(2);
+        this['mid_node'].runAction(action);
+    },
+
+    rot_and_big_reset: function () {
+        this['mid_node'].setZOrder(100);
+        var action = cc.Spawn.create(
+            cc.ScaleTo.create(0.2, 1),
+            cc.RotateTo.create(0.2, 0)
+        );
+        action.setTag(2);
+        this['mid_node'].stopActionByTag(2);
+        this['mid_node'].runAction(action);
     }
-
-
 });

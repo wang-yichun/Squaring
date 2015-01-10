@@ -21,15 +21,27 @@ var NBox_01 = NBox.extend({
     },
 
     onTouchDown: function () {
+        Core.show_related_box(false);
+        Core.related_boxs_loc = Core.getRelatedBoxLoc(this.loc);
+        Core.show_related_box(true);
     },
 
     onTouchIn: function () {
+        Core.show_related_box(false);
+        Core.related_boxs_loc = Core.getRelatedBoxLoc(this.loc);
+        Core.show_related_box(true);
     },
 
     onTouchOut: function () {
+        Core.show_related_box(false);
+        Core.related_boxs_loc = null;
     },
 
     onTouchUp: function () {
+        Core.show_related_box(false);
+
+        
+        Core.related_boxs_loc = null;
     },
 
     remove: function () {
