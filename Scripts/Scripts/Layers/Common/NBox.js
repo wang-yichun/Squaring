@@ -29,6 +29,10 @@ var NBox = cc.Node.extend({
     onTouchInnerDrag: function () {
     },
 
+    onTouchHold: function () {
+        cc.log('NBox onTouchHold');
+    },
+
     onTouchOut: function () {
     },
 

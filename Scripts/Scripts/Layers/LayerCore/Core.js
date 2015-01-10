@@ -11,10 +11,28 @@ var Core = {
         this.box_lists = null;
         this.cur_n = null;
         this.locByTouchesIdxs = null;
+        this.posByTouchesIdxs = null;
         this.game_going = false;
         this.speed = 1;
         this.win_size = cc.Director.getInstance().getWinSize();
         this.column_had_removed = 0;
+
+        this.touch_slow = false;
+        this.touch_hold_count = -1;
+    },
+
+    refreshTouchSlow: function () {
+        if (this.locByTouchesIdxs == null) {
+            this.touch_slow = false;
+            return;
+        }
+        for (var i = 0; i < this.locByTouchesIdxs.length; i++) {
+            if (this.locByTouchesIdxs[i] != null) {
+                this.touch_slow = true;
+                return;
+            }
+        }
+        this.touch_slow = false;
     },
 
     onTouchesBegan: function (touches, event) {
@@ -30,11 +48,15 @@ var Core = {
                 var box = this.box_lists[loc.x][loc.y];
                 if (box) {
                     box.controller.onTouchDown();
+
+                    Core.touch_hold_count = 0;
                 }
             }
 
             this.locByTouchesIdxs[touches[tid].getId()] = loc;
+            this.posByTouchesIdxs[touches[tid].getId()] = pos_on_stage;
         }
+        this.refreshTouchSlow();
     },
     onTouchesMoved: function (touches, event) {
         if (this.game_going == false)  return;
@@ -52,6 +74,9 @@ var Core = {
                     }
                 }
             } else {
+                if (Core.touch_hold_count >= 0) {
+                    Core.touch_hold_count = -1;
+                }
 
                 if (old_loc && this.box_lists[old_loc.x]) {
                     var old_box = this.box_lists[old_loc.x][old_loc.y];
@@ -68,6 +93,7 @@ var Core = {
             }
 
             this.locByTouchesIdxs[touches[tid].getId()] = loc;
+            this.posByTouchesIdxs[touches[tid].getId()] = pos_on_stage;
         }
     },
     onTouchesEnded: function (touches, event) {
@@ -84,10 +110,27 @@ var Core = {
             }
 
             this.locByTouchesIdxs[touches[tid].getId()] = null;
+            this.posByTouchesIdxs[touches[tid].getId()] = null;
+        }
+        this.refreshTouchSlow();
+        if (Core.touch_hold_count >= 0) {
+            Core.touch_hold_count = 0;
         }
     },
     onTouchesCancelled: function () {
         this.locByTouchesIdxs = new Array(10);
+        this.posByTouchesIdxs = new Array(10);
+    },
+    callOnTouchesHold: function () {
+        if (this.locByTouchesIdxs[0]) {
+            var loc = this.locByTouchesIdxs[0];
+            if (this.box_lists[loc.x]) {
+                var box = this.box_lists[loc.x][loc.y];
+                if (box) {
+                    box.controller.onTouchHold();
+                }
+            }
+        }
     },
 
     game_start: function () {
@@ -98,7 +141,18 @@ var Core = {
 
     game_step: function () {
         var ori_pos = Core.stage.getPosition();
-        var new_pos = cc.pAdd(ori_pos, cc.p(-Core.speed, 0));
+        var speed = Core.speed;
+        if (Core.touch_slow) {
+            speed *= .2;
+            if (Core.touch_hold_count >= 0) {
+                Core.touch_hold_count++;
+            }
+            if (Core.touch_hold_count > 15) {
+                Core.callOnTouchesHold();
+                Core.touch_hold_count = -1;
+            }
+        }
+        var new_pos = cc.pAdd(ori_pos, cc.p(-speed, 0));
         Core.stage.setPosition(new_pos);
 
         var right_pos_in_stage = Core.stage.convertToNodeSpace(cc.p(Core.win_size.width, 0));
@@ -110,8 +164,8 @@ var Core = {
             Core.create_a_column();
         }
 
-        if (this.column_had_removed < left_loc.x) {
-            this.column_had_removed = left_loc.x;
+        if (Core.column_had_removed < left_loc.x) {
+            Core.column_had_removed = left_loc.x;
             Core.remove_a_column(left_loc.x);
         }
     },
@@ -121,28 +175,8 @@ var Core = {
         this.box_lists = [];
         this.cur_n = 0;
 
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-        this.create_a_column();
-
         this.locByTouchesIdxs = new Array(10);
+        this.posByTouchesIdxs = new Array(10);
     },
 
     create_a_column: function () {
@@ -150,9 +184,10 @@ var Core = {
         var box_column = [];
         for (var m in data_column) {
             var it = data_column[m];
-            if (it == 1) {
+            if (it >= 0 && it <= 4) {
                 var mid_node = cc.Node.create();
-                var ccb_node = cc.BuilderReader.load(RES_CCBI_NBox_01);
+                var ccbi_name = Data.box[it].ccbi_file;
+                var ccb_node = cc.BuilderReader.load(ccbi_name);
 
                 ccb_node.controller.loc = cc.p(this.cur_n, m);
 

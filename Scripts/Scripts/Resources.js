@@ -5,9 +5,17 @@ var RES_CCBI_STest = 'Assets/CCBI/STest.ccbi';
 
 var RES_CCBI_NBox = 'Assets/CCBI/Common/NBox.ccbi';
 var RES_CCBI_NBox_01 = 'Assets/CCBI/Common/NBox_01.ccbi';
+var RES_CCBI_NBox_02 = 'Assets/CCBI/Common/NBox_02.ccbi';
+var RES_CCBI_NBox_03 = 'Assets/CCBI/Common/NBox_03.ccbi';
+var RES_CCBI_NBox_04 = 'Assets/CCBI/Common/NBox_04.ccbi';
+var RES_CCBI_NBox_05 = 'Assets/CCBI/Common/NBox_05.ccbi';
 var RES_CCBI_NButton = 'Assets/CCBI/Common/NButton.ccbi';
 var RES_CCBI_PLight_01 = 'Assets/CCBI/Common/PLight_01.ccbi';
 var RES_CCBI_SBox_01 = 'Assets/CCBI/Common/SBox_01.ccbi';
+var RES_CCBI_SBox_02 = 'Assets/CCBI/Common/SBox_02.ccbi';
+var RES_CCBI_SBox_03 = 'Assets/CCBI/Common/SBox_03.ccbi';
+var RES_CCBI_SBox_04 = 'Assets/CCBI/Common/SBox_04.ccbi';
+var RES_CCBI_SBox_05 = 'Assets/CCBI/Common/SBox_05.ccbi';
 
 var RES_CCBI_LCore = 'Assets/CCBI/LayerCore/LCore.ccbi';
 
@@ -52,9 +60,17 @@ var g_resources = [
 	{src:RES_CCBI_STest},
 	{src:RES_CCBI_NBox},
 	{src:RES_CCBI_NBox_01},
+	{src:RES_CCBI_NBox_02},
+	{src:RES_CCBI_NBox_03},
+	{src:RES_CCBI_NBox_04},
+	{src:RES_CCBI_NBox_05},
 	{src:RES_CCBI_NButton},
 	{src:RES_CCBI_PLight_01},
 	{src:RES_CCBI_SBox_01},
+	{src:RES_CCBI_SBox_02},
+	{src:RES_CCBI_SBox_03},
+	{src:RES_CCBI_SBox_04},
+	{src:RES_CCBI_SBox_05},
 	{src:RES_CCBI_LCore},
 	{src:RES_JSON_enemy},
 	{src:RES_C_gray_fsh},

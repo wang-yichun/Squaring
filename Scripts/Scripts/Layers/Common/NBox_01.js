@@ -21,13 +21,9 @@ var NBox_01 = NBox.extend({
     },
 
     onTouchDown: function () {
-        this.remove_gfx();
-        this.remove();
     },
 
     onTouchIn: function () {
-        this.remove_gfx();
-        this.remove();
     },
 
     onTouchOut: function () {

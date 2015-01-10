@@ -66,9 +66,11 @@
 										<key>type</key>
 										<string>CCBFile</string>
 										<key>value</key>
-										<string>Assets/CCBI/Common/SBox_01.ccb</string>
+										<string>Assets/CCBI/Common/SBox_04.ccb</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
