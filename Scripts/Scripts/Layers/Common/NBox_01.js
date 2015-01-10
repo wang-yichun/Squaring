@@ -32,6 +32,16 @@ var NBox_01 = NBox.extend({
         Core.show_related_box(true);
     },
 
+    onTouchHold: function () {
+        cc.log('NBox_01 onTouchHold');
+
+        Core.show_related_box(false);
+        Core.related_boxs_loc = Core.getRelatedBoxLoc(this.loc);
+
+        Core.combine_related_box(this.loc);
+        Core.related_boxs_loc = Core.getRelatedBoxLoc(this.loc);
+    },
+
     onTouchOut: function () {
         Core.show_related_box(false);
         Core.related_boxs_loc = null;
@@ -76,12 +86,43 @@ var NBox_01 = NBox.extend({
         );
     },
 
+    combine_remove: function (dest_pos) {
+        var mid_node = this.rootNode.getParent();
+
+        Core.remove_box_data(this.loc);
+
+        mid_node.runAction(
+            cc.Sequence.create(
+                cc.CallFunc.create(
+                    function () {
+                        this['ccb_sbox'].runAction(
+                            cc.Sequence.create(
+                                cc.DelayTime.create(0.2),
+                                cc.FadeOut.create(0.2)
+                            )
+                        )
+                    }, this
+                ),
+                cc.Spawn.create(
+                    cc.JumpTo.create(0.4, dest_pos, 40, 1),
+                    cc.EaseIn.create(cc.RotateBy.create(0.4, 360), 2)
+                ),
+                cc.CallFunc.create(
+                    function () {
+                        this.rootNode.getParent().removeFromParent();
+                    }, this
+                )
+            )
+        );
+    },
+
     remove_gfx: function () {
         var particle = cc.BuilderReader.load(RES_CCBI_PLight_01);
         var pos = this.rootNode.getParent().getPosition();
         particle.setPosition(pos);
         particle.resetSystem();
         particle.setAutoRemoveOnFinish(true);
-        Core.stage.addChild(particle);
+        Core.stage.addChild(particle, 300);
     }
+
 });

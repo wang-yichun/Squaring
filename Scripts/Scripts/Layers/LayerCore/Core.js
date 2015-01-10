@@ -193,6 +193,8 @@ var Core = {
                 ccb_node.controller.loc = cc.p(this.cur_n, parseInt(m));
                 ccb_node.controller.mid_node = mid_node;
                 ccb_node.controller.box_id = it;
+                ccb_node.controller.number_value = 1;
+                ccb_node.controller.refresh_show();
 
                 mid_node.addChild(ccb_node, 0, 1);
                 mid_node.setPosition(this.loc2pos(cc.p(this.cur_n, parseInt(m))));
@@ -292,14 +294,16 @@ var Core = {
     },
     show_related_box: function (enabled) {
         if (this.related_boxs_loc) {
-            for (var idx in this.related_boxs_loc) {
-                var loc = this.related_boxs_loc[idx];
-                var box = this.getBoxAtLoc(loc);
-                if (box) {
-                    if (enabled) {
-                        box.controller.rot_and_big();
-                    } else {
-                        box.controller.rot_and_big_reset();
+            if (this.related_boxs_loc.length >= 3) {
+                for (var idx in this.related_boxs_loc) {
+                    var loc = this.related_boxs_loc[idx];
+                    var box = this.getBoxAtLoc(loc);
+                    if (box) {
+                        if (enabled) {
+                            box.controller.rot_and_big();
+                        } else {
+                            box.controller.rot_and_big_reset();
+                        }
                     }
                 }
             }
@@ -307,12 +311,14 @@ var Core = {
     },
     remove_related_box: function () {
         if (this.related_boxs_loc) {
-            for (var idx in this.related_boxs_loc) {
-                var loc = this.related_boxs_loc[idx];
-                var box = this.getBoxAtLoc(loc);
-                if (box) {
-                    box.controller.remove_gfx();
-                    box.controller.remove();
+            if (this.related_boxs_loc.length >= 3) {
+                for (var idx in this.related_boxs_loc) {
+                    var loc = this.related_boxs_loc[idx];
+                    var box = this.getBoxAtLoc(loc);
+                    if (box) {
+                        box.controller.remove_gfx();
+                        box.controller.remove();
+                    }
                 }
             }
         }
@@ -393,6 +399,31 @@ var Core = {
         return ccb_node;
     },
 
+    combine_related_box: function (loc) {
+
+        var box = this.getBoxAtLoc(loc);
+        if (box == null) return;
+        var dest_pos = box.controller.mid_node.getPosition();
+
+        if (this.related_boxs_loc) {
+            if (this.related_boxs_loc.length >= 3) {
+                for (var idx in this.related_boxs_loc) {
+                    var loc1 = this.related_boxs_loc[idx];
+                    var box1 = this.getBoxAtLoc(loc1);
+                    if (box1) {
+                        if (box1 != box) {
+                            box1.controller.combine_remove(dest_pos);
+                        }
+                    }
+                }
+
+                box.controller.delay_scale_big_then_normal();
+                box.controller.remove_gfx();
+                box.controller.number_value = Math.pow(this.related_boxs_loc.length, 2);
+            }
+        }
+    },
+
     create_a_box: function (loc) {
         var it = Data.getRandomId();
         var mid_node = cc.Node.create();
@@ -402,6 +433,8 @@ var Core = {
         ccb_node.controller.loc = cc.p(loc.x, parseInt(loc.y));
         ccb_node.controller.mid_node = mid_node;
         ccb_node.controller.box_id = it;
+        ccb_node.controller.number_value = 1;
+        ccb_node.controller.refresh_show();
 
         mid_node.addChild(ccb_node, 0, 1);
         mid_node.setPosition(this.loc2pos(cc.p(loc.x, parseInt(loc.y))));
