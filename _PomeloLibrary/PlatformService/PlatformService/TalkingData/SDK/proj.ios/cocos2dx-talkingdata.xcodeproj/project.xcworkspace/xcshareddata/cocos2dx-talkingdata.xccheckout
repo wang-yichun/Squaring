@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BBEC54FE-AE92-489E-9197-6185B8CA6249</string>
+	<key>IDESourceControlProjectName</key>
+	<string>cocos2dx-talkingdata</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C6864AF4-0EA5-4A00-A518-69D5D39A85D9</key>
+		<string>ssh://github.com/MeYouGames/PlatformService.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PlatformService/TalkingData/SDK/proj.ios/cocos2dx-talkingdata.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C6864AF4-0EA5-4A00-A518-69D5D39A85D9</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/MeYouGames/PlatformService.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C6864AF4-0EA5-4A00-A518-69D5D39A85D9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C6864AF4-0EA5-4A00-A518-69D5D39A85D9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PlatformService</string>
+		</dict>
+	</array>
+</dict>
+</plist>
