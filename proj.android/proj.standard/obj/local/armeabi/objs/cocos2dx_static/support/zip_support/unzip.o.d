@@ -1,5 +1,5 @@
 obj/local/armeabi/objs/cocos2dx_static/support/zip_support/unzip.o: \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/support/zip_support/unzip.cpp \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/support/zip_support/unzip.cpp \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/stdio.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/cdefs.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -24,11 +24,11 @@ obj/local/armeabi/objs/cocos2dx_static/support/zip_support/unzip.o: \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/memory.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/zlib.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/zconf.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/support/zip_support/unzip.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/android/CCPlatformDefine.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/support/zip_support/unzip.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/android/CCPlatformDefine.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/android/log.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/support/zip_support/ioapi.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/support/zip_support/ioapi.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/errno.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/linux/errno.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/asm/errno.h \
@@ -83,15 +83,15 @@ obj/local/armeabi/objs/cocos2dx_static/support/zip_support/unzip.o: \
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/zconf.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/support/zip_support/unzip.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/support/zip_support/unzip.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/android/CCPlatformDefine.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/android/CCPlatformDefine.h:
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/android/log.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/support/zip_support/ioapi.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/support/zip_support/ioapi.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h:
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/errno.h:
 

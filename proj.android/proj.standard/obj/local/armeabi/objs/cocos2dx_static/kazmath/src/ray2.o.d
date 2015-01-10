@@ -1,5 +1,5 @@
 obj/local/armeabi/objs/cocos2dx_static/kazmath/src/ray2.o: \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/src/ray2.c \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/src/ray2.c \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/assert.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/cdefs.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -17,14 +17,14 @@ obj/local/armeabi/objs/cocos2dx_static/kazmath/src/ray2.o: \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/linux/types.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/kernel.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/sysmacros.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/ray2.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformMacros.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/include/ccConfig.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/android/CCPlatformDefine.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/ray2.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformMacros.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/include/ccConfig.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/android/CCPlatformDefine.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/android/log.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/utility.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/utility.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/math.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/limits.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/limits.h \
@@ -33,7 +33,7 @@ obj/local/armeabi/objs/cocos2dx_static/kazmath/src/ray2.o: \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/limits.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/syslimits.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/asm/page.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/vec2.h
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/vec2.h
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/assert.h:
 
@@ -69,21 +69,21 @@ obj/local/armeabi/objs/cocos2dx_static/kazmath/src/ray2.o: \
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/sysmacros.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/ray2.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/ray2.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformMacros.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformMacros.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/include/ccConfig.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/include/ccConfig.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/CCPlatformConfig.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/android/CCPlatformDefine.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/platform/android/CCPlatformDefine.h:
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/android/log.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/utility.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/utility.h:
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/math.h:
 
@@ -101,4 +101,4 @@ obj/local/armeabi/objs/cocos2dx_static/kazmath/src/ray2.o: \
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/asm/page.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/vec2.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/cocos2dx/kazmath/include/kazmath/vec2.h:

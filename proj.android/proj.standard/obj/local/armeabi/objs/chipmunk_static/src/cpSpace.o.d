@@ -1,5 +1,5 @@
 obj/local/armeabi/objs/chipmunk_static/src/cpSpace.o: \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/src/cpSpace.c \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/src/cpSpace.c \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/stdio.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/cdefs.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -18,8 +18,8 @@ obj/local/armeabi/objs/chipmunk_static/src/cpSpace.o: \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/sysmacros.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/string.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/malloc.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk_private.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk_private.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/stdlib.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/alloca.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/strings.h \
@@ -32,26 +32,26 @@ obj/local/armeabi/objs/chipmunk_static/src/cpSpace.o: \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/limits.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/syslimits.h \
  /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/asm/page.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk_types.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpVect.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpBB.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpSpatialIndex.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpBody.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpShape.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpPolyShape.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpArbiter.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpConstraint.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpPinJoint.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpSlideJoint.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpPivotJoint.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpGrooveJoint.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpDampedSpring.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpDampedRotarySpring.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpRotaryLimitJoint.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpRatchetJoint.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpGearJoint.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpSimpleMotor.h \
- /Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpSpace.h
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk_types.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpVect.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpBB.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpSpatialIndex.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpBody.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpShape.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpPolyShape.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpArbiter.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpConstraint.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpPinJoint.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpSlideJoint.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpPivotJoint.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpGrooveJoint.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpDampedSpring.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpDampedRotarySpring.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpRotaryLimitJoint.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpRatchetJoint.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpGearJoint.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpSimpleMotor.h \
+ /Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpSpace.h
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/stdio.h:
 
@@ -89,9 +89,9 @@ obj/local/armeabi/objs/chipmunk_static/src/cpSpace.o: \
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/malloc.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk_private.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk_private.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk.h:
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/stdlib.h:
 
@@ -117,42 +117,42 @@ obj/local/armeabi/objs/chipmunk_static/src/cpSpace.o: \
 
 /Users/leadprogrammer/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/asm/page.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk_types.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/chipmunk_types.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpVect.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpVect.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpBB.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpBB.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpSpatialIndex.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpSpatialIndex.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpBody.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpBody.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpShape.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpShape.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpPolyShape.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpPolyShape.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpArbiter.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpArbiter.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpConstraint.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpConstraint.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpPinJoint.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpPinJoint.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpSlideJoint.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpSlideJoint.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpPivotJoint.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpPivotJoint.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpGrooveJoint.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpGrooveJoint.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpDampedSpring.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpDampedSpring.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpDampedRotarySpring.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpDampedRotarySpring.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpRotaryLimitJoint.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpRotaryLimitJoint.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpRatchetJoint.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpRatchetJoint.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpGearJoint.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpGearJoint.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpSimpleMotor.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/constraints/cpSimpleMotor.h:
 
-/Users/leadprogrammer/Documents/TD/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpSpace.h:
+/Users/leadprogrammer/Documents/Squaring/proj.android/proj.standard/../../_PomeloLibrary/GameFoundation/external/chipmunk/include/chipmunk/cpSpace.h:

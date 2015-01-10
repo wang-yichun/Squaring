@@ -4,19 +4,6 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>BMF_CH01_36</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1,1475},{512,448}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{512,448}}</string>
-                <key>sourceSize</key>
-                <string>{512,448}</string>
-            </dict>
             <key>BMF_CH01_72</key>
             <dict>
                 <key>frame</key>
@@ -30,71 +17,6 @@
                 <key>sourceSize</key>
                 <string>{768,768}</string>
             </dict>
-            <key>BMF_CH02_52</key>
-            <dict>
-                <key>frame</key>
-                <string>{{963,1475},{384,320}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{384,320}}</string>
-                <key>sourceSize</key>
-                <string>{384,320}</string>
-            </dict>
-            <key>BMF_CH02_64</key>
-            <dict>
-                <key>frame</key>
-                <string>{{514,1475},{448,448}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{448,448}}</string>
-                <key>sourceSize</key>
-                <string>{448,448}</string>
-            </dict>
-            <key>BMF_CH02_72</key>
-            <dict>
-                <key>frame</key>
-                <string>{{706,770},{704,704}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{704,704}}</string>
-                <key>sourceSize</key>
-                <string>{704,704}</string>
-            </dict>
-            <key>BMF_CH02_72_01</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1,770},{704,704}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{704,704}}</string>
-                <key>sourceSize</key>
-                <string>{704,704}</string>
-            </dict>
-            <key>BMF_Test</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1411,1},{576,576}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{576,576}}</string>
-                <key>sourceSize</key>
-                <string>{576,576}</string>
-            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -103,9 +25,9 @@
             <key>realTextureFileName</key>
             <string>BMF.png</string>
             <key>size</key>
-            <string>{2048,2048}</string>
+            <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:6e9bff8e7870633d44e9446e5c72fce3:e74b9f504bd0b538640482a07dad42fc:558940b1752ca7eea05ad5db367ba72f$</string>
+            <string>$TexturePacker:SmartUpdate:dcfa2e5537df18244f771fcee5ca29f0:bee67e2e83df8b161cb22003692b65e5:558940b1752ca7eea05ad5db367ba72f$</string>
             <key>textureFileName</key>
             <string>BMF.png</string>
         </dict>

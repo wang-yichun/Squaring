@@ -44,7 +44,7 @@ director.setAnimationInterval(1.0 / 60);
 // Switcher init.
 Switcher.initSwitcher();
 
-Local.addCardFirstTime(); // 测试时加入了一些牌
+//Local.addCardFirstTime(); // 测试时加入了一些牌
 //
 //var para = {
 //    'scene_id': 'SceneA',  // 目标场景
@@ -92,105 +92,44 @@ Local.addCardFirstTime(); // 测试时加入了一些牌
 //};
 //Switcher.gotoScene(para);
 
-
 cc.SpriteFrameCache.getInstance().addSpriteFrames(RES_BMF_PLIST);
 cc.SpriteFrameCache.getInstance().addSpriteFrames(RES_TEX_PLIST_UI);
-cc.SpriteFrameCache.getInstance().addSpriteFrames(RES_TEX_PLIST_Roles);
-cc.SpriteFrameCache.getInstance().addSpriteFrames(RES_TEX_PLIST_Points);
-cc.SpriteFrameCache.getInstance().addSpriteFrames(RES_TEX_PLIST_BigMap);
+cc.SpriteFrameCache.getInstance().addSpriteFrames(RES_TEX_PLIST_LayerCore);
 
 cc.ShaderCache.getInstance().loadDefaultShaders();
 
-DataWorld.init();
-DataWave.init();
-DataTower.init();
-DataSkill.init();
-DataHero.init();
-DataEnemy.init();
-
-switch (GameConfig.entrance) {
-    case EntranceType.normal:
-        var para = {
-            'scene_id': 'SceneB',  // 目标场景
-            'groups': {             // 每个组的目标层
-                'core_layer': 'Loading'
-            },
-            'out_animation': {func_name: 'scene_out_animation_blackfade', para: [1]},
-            'in_animation': {func_name: 'scene_in_animation_blackfade', para: [0.2]}
-        };
-        Switcher.gotoScene(para);
-        break;
-    case EntranceType.in_game:
-        var para = {
-            'scene_id': 'SceneA',  // 目标场景
-            'groups': {             // 每个组的目标层
-                'group_editer': 'GamePlayer',
-                'top_panel': 'InGameTop',
-                'left_panel': 'InGameLeft'
-            },
-            'out_animation': {func_name: 'scene_out_animation_blackfade', para: [1]},
-            'in_animation': {func_name: 'scene_in_animation_blackfade', para: [0.2]}
-        };
-        Switcher.gotoScene(para);
-        break;
-    case EntranceType.route_edit:
-        var para = {
-            'scene_id': 'SceneA',  // 目标场景
-            'groups': {             // 每个组的目标层
-                'group_editer': 'RouteEditer'
-            },
-            'out_animation': {func_name: 'scene_out_animation_blackfade', para: [1]},
-            'in_animation': {func_name: 'scene_in_animation_blackfade', para: [0.2]}
-        };
-        Switcher.gotoScene(para);
-        break;
-    case EntranceType.yi_test:
-        var para = {
-            'scene_id': 'SceneB',  // 目标场景
-            'groups': {             // 每个组的目标层
-                'up_layer': 'HeroComposeUpgrade'
-            },
-            'out_animation': {func_name: 'scene_out_animation_blackfade', para: [1]},
-            'in_animation': {func_name: 'scene_in_animation_blackfade', para: [0.2]}
-        };
-        Switcher.gotoScene(para);
-        break;
-    case EntranceType.zg_test:
-        var para = {
-            'scene_id': 'SceneB',  // 目标场景
-            'groups': {             // 每个组的目标层
-                'up_layer': 'ReadyRight'
-            },
-            'out_animation': {func_name: 'scene_out_animation_blackfade', para: [1]},
-            'in_animation': {func_name: 'scene_in_animation_blackfade', para: [0.2]}
-        };
-        Switcher.gotoScene(para);
-        break;
-    default :
+var para = {
+    'scene_id': 'SceneA',  // 目标场景
+    'groups': {             // 每个组的目标层
+        'core_group': 'LCore',
+        'popup_group': 'LMenuInGame'
+    },
+    'out_animation': {func_name: 'scene_out_animation_blackfade', para: [1]},
+    'in_animation': {func_name: 'scene_in_animation_blackfade', para: [0.2]}
 };
-
+Switcher.gotoScene(para);
 
 // Javascript - OC - Cpp - JAVA
 
-var send_para = {
-    'call_back': 'test_callback',
-    'number_int': 1234,
-    'number_float': 1234.1234,
-    'string_value1': 'abc',
-    'string_value2': '藌柚软件科技',
-    'vector_value': [1234, '郑东新区'],
-    'object_value': {'key1':123, 'key2': 'abc'}
-};
-
-var test_callback = function (para) {
-    cc.log('JS: test_callback successful!');
-    cc.log(JSON.stringify(para));
-};
-
-JSBHelper.AddSelector('test_callback', test_callback);
-
-JSBHelper.SendMessageToCPP("cppb_test", send_para);
-JSBHelper.SendMessageToOC("ocb_test", send_para);
-JSBHelper.SendMessageToJAVA("javab_test", send_para);
-
-
+//var send_para = {
+//    'call_back': 'test_callback',
+//    'number_int': 1234,
+//    'number_float': 1234.1234,
+//    'string_value1': 'abc',
+//    'string_value2': '藌柚软件科技',
+//    'vector_value': [1234, '郑东新区'],
+//    'object_value': {'key1':123, 'key2': 'abc'}
+//};
+//
+//var test_callback = function (para) {
+//    cc.log('JS: test_callback successful!');
+//    cc.log(JSON.stringify(para));
+//};
+//
+//JSBHelper.AddSelector('test_callback', test_callback);
+//
+//JSBHelper.SendMessageToCPP("cppb_test", send_para);
+//JSBHelper.SendMessageToOC("ocb_test", send_para);
+//JSBHelper.SendMessageToJAVA("javab_test", send_para);
+//
+//

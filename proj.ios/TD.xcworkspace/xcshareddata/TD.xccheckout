@@ -14,6 +14,8 @@
 		<string>ssh://github.com/MeYouGames/GameFoundation.git</string>
 		<key>86F349E9DF65FEDF98322DB46A7F62B4E03BE686</key>
 		<string>ssh://github.com/MeYouGames/TowerDef.git</string>
+		<key>CF03860704D58BD25CB9F0DB084E84ED98B4E62F</key>
+		<string>github.com:wang-yichun/Squaring.git</string>
 		<key>D0A71910F3D1B7453B419B21EF29429C54C321A9</key>
 		<string>ssh://github.com/MeYouGames/TowerDefAssets.git</string>
 		<key>FF32992E643378709BFEDD9EABC85F85BD879BBE</key>
@@ -24,20 +26,22 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6C85C3454651E5A51772B649A5DB77C51A70F515</key>
-		<string>../../_PomeloLibrary/GameFoundation</string>
+		<string>../../../TD/_PomeloLibrary/GameFoundation</string>
 		<key>86F349E9DF65FEDF98322DB46A7F62B4E03BE686</key>
+		<string>../../../TD</string>
+		<key>CF03860704D58BD25CB9F0DB084E84ED98B4E62F</key>
 		<string>../..</string>
 		<key>D0A71910F3D1B7453B419B21EF29429C54C321A9</key>
-		<string>../../_AssetsLibrary</string>
+		<string>../../../TD/_AssetsLibrary</string>
 		<key>FF32992E643378709BFEDD9EABC85F85BD879BBE</key>
-		<string>../../_PomeloLibrary/PlatformService</string>
+		<string>../../../TD/_PomeloLibrary/PlatformService</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/MeYouGames/TowerDef.git</string>
+	<string>github.com:wang-yichun/Squaring.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>86F349E9DF65FEDF98322DB46A7F62B4E03BE686</string>
+	<string>CF03860704D58BD25CB9F0DB084E84ED98B4E62F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -63,6 +67,14 @@
 			<string>FF32992E643378709BFEDD9EABC85F85BD879BBE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>PlatformService</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CF03860704D58BD25CB9F0DB084E84ED98B4E62F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Squaring</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
