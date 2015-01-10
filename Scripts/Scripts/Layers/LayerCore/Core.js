@@ -304,5 +304,17 @@ var Core = {
                 }
             }
         }
+    },
+    remove_related_box: function () {
+        if (this.related_boxs_loc) {
+            for (var idx in this.related_boxs_loc) {
+                var loc = this.related_boxs_loc[idx];
+                var box = this.getBoxAtLoc(loc);
+                if (box) {
+                    box.controller.remove_gfx();
+                    box.controller.remove();
+                }
+            }
+        }
     }
 };

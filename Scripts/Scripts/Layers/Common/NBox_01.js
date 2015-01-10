@@ -39,8 +39,7 @@ var NBox_01 = NBox.extend({
 
     onTouchUp: function () {
         Core.show_related_box(false);
-
-        
+        Core.remove_related_box();
         Core.related_boxs_loc = null;
     },
 
