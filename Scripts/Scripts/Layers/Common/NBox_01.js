@@ -41,6 +41,7 @@ var NBox_01 = NBox.extend({
         Core.show_related_box(false);
         Core.remove_related_box();
         Core.related_boxs_loc = null;
+        Core.repair_map();
     },
 
     remove: function () {
@@ -48,11 +49,12 @@ var NBox_01 = NBox.extend({
 
         var diff = cc.p(Math.random() * 40 - 20, -80);
 
+        Core.remove_box_data(this.loc);
+
         mid_node.runAction(
             cc.Sequence.create(
                 cc.CallFunc.create(
                     function () {
-                        Core.remove_box_data(this.loc);
                         this['ccb_sbox'].runAction(
                             cc.Sequence.create(
                                 cc.DelayTime.create(0.2),

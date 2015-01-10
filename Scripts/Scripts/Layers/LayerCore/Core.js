@@ -156,7 +156,7 @@ var Core = {
         var new_pos = cc.pAdd(ori_pos, cc.p(-speed, 0));
         Core.stage.setPosition(new_pos);
 
-        var right_pos_in_stage = Core.stage.convertToNodeSpace(cc.p(Core.win_size.width, 0));
+        var right_pos_in_stage = Core.stage.convertToNodeSpace(cc.p(Core.win_size.width + Core.cell_side, 0));
         var right_loc = Core.pos2loc(right_pos_in_stage);
         var left_pos_in_stage = Core.stage.convertToNodeSpace(cc.p(-Core.cell_side, 0));
         var left_loc = Core.pos2loc(left_pos_in_stage);
@@ -316,5 +316,98 @@ var Core = {
                 }
             }
         }
+    },
+
+    // 补位
+    repair_map: function () {
+        for (var n = Core.column_had_removed + 1; n < this.cur_n; n++) {
+            for (var m = 0; m < Data.height; m++) {
+                var loc = cc.p(n, m);
+                var box = this.getBoxAtLoc(loc);
+                if (box == null) {
+                    var box1 = this.get_box_condition_1(loc);
+                    if (box1) {
+                        this.repair_move(box1.controller.loc, loc);
+                    } else {
+                        // todo: 没有了的情况需要生成新的
+                    }
+                }
+            }
+        }
+    },
+    // 补位移动,从loc0移动到loc1: loc0原来非空, loc1原来空
+    repair_move: function (loc0, loc1) {
+        var box0 = this.getBoxAtLoc(loc0);
+        var box1 = this.getBoxAtLoc(loc1);
+        if (box0 == null) {
+            return;
+        }
+        if (box1 != null) {
+            return;
+        }
+        // 数据
+        this.box_lists[loc1.x][loc1.y] = box0;
+        this.box_lists[loc0.x][loc0.y] = null;
+        box0.controller.loc = loc1;
+
+        box0.controller.mid_node.setZOrder(110);
+
+        var destination_pos = this.loc2pos(loc1);
+        var move_action = cc.EaseExponentialInOut.create(
+            cc.MoveTo.create(.4, destination_pos)
+        );
+        var call_action = cc.CallFunc.create(
+            function () {
+                this.controller.mid_node.setZOrder(100)
+            }, box0
+        );
+        var action = cc.Sequence.create(move_action, call_action);
+        action.setTag(3);
+        box0.controller.mid_node.stopActionByTag(3);
+        box0.controller.mid_node.runAction(action);
+    },
+    // 以一个loc往右找,返回第一个不为空的box, 如果没有则返回null
+    get_box_condition_1: function (loc) {
+        var n = loc.x;
+        do {
+            n++;
+
+            if (n == this.cur_n) {
+                this.create_a_box(loc);
+                return null;
+            }
+
+            if (n == this.cur_n - 1 && this.box_lists[n][loc.y] == null) {
+                var ccb_node = this.create_a_box(cc.p(n, loc.y));
+                return ccb_node;
+            }
+
+            var loc1 = cc.p(n, loc.y);
+            var box = this.getBoxAtLoc(loc1);
+            if (box) {
+                return box;
+            }
+        } while (n <= this.cur_n - 1);
+
+
+        return ccb_node;
+    },
+
+    create_a_box: function (loc) {
+        var it = Data.getRandomId();
+        var mid_node = cc.Node.create();
+        var ccbi_name = Data.box[it].ccbi_file;
+        var ccb_node = cc.BuilderReader.load(ccbi_name);
+
+        ccb_node.controller.loc = cc.p(loc.x, parseInt(loc.y));
+        ccb_node.controller.mid_node = mid_node;
+        ccb_node.controller.box_id = it;
+
+        mid_node.addChild(ccb_node, 0, 1);
+        mid_node.setPosition(this.loc2pos(cc.p(loc.x, parseInt(loc.y))));
+        this.stage.addChild(mid_node, 100);
+
+        this.box_lists[loc.x][loc.y] = ccb_node;
+        return ccb_node;
     }
 };

@@ -14,25 +14,27 @@ var Data = {
             var row = [];
             for (var m = 0; m < this.height; m++) {
 
-                var r = Math.random();
-                var id;
-                if (r < .04) {
-                    id = 4;
-                } else if (r < .35) {
-                    id = 1;
-                } else if (r < .60) {
-                    id = 0;
-                } else if (r < .80) {
-                    id = 2;
-                } else {
-                    id = 3;
-                }
-
-
-                row.push(id);
+                row.push(Data.getRandomId());
             }
             this.data.push(row);
         }
+    },
+
+    getRandomId: function () {
+        var r = Math.random();
+        var id;
+        if (r < .04) {
+            id = 4;
+        } else if (r < .35) {
+            id = 1;
+        } else if (r < .60) {
+            id = 0;
+        } else if (r < .80) {
+            id = 2;
+        } else {
+            id = 3;
+        }
+        return id;
     },
 
     box: [
