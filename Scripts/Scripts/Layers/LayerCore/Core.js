@@ -8,6 +8,10 @@ var Core = {
         this.stage_gfx = stage_gfx_node;
     },
     reset: function () {
+
+        gLCore.my_hp_value = 200;
+        gLCore.enemy_hp_value = 200;
+
         this.box_lists = null;
         this.cur_n = null;
         this.locByTouchesIdxs = null;
@@ -20,6 +24,9 @@ var Core = {
         this.touch_slow = false;
         this.touch_hold_count = -1;
         this.related_boxs_loc = null;
+
+        this.stage.removeAllChildren();
+
     },
 
     refreshTouchSlow: function () {
@@ -37,10 +44,10 @@ var Core = {
     },
 
     onTouchesBegan: function (touches, event) {
-        if (this.game_going == false) {
-            this.game_start();
-            return;
-        }
+        //if (this.game_going == false) {
+        //    this.game_start();
+        //    return;
+        //}
         for (var tid = 0; tid < touches.length; tid++) {
             var pos_on_stage = this.stage.convertTouchToNodeSpace(touches[tid]);
             var loc = this.pos2loc(pos_on_stage);
@@ -140,6 +147,11 @@ var Core = {
         gLCore.rootNode.schedule(this.game_step, 1 / 60);
     },
 
+    game_pause: function () {
+        this.game_going = false;
+        gLCore.rootNode.unschedule(this.game_step);
+    },
+
     game_step: function () {
         var ori_pos = Core.stage.getPosition();
         var speed = Core.speed;
@@ -195,6 +207,7 @@ var Core = {
                 ccb_node.controller.box_id = it;
                 ccb_node.controller.number_value = 1;
                 ccb_node.controller.refresh_show();
+                ccb_node.controller.is_reward = false;
 
                 mid_node.addChild(ccb_node, 0, 1);
                 mid_node.setPosition(this.loc2pos(cc.p(this.cur_n, parseInt(m))));
@@ -230,7 +243,13 @@ var Core = {
         if (this.box_lists[loc.x]) {
             var box = this.box_lists[loc.x][loc.y];
             if (box) {
-                box.getParent().removeFromParent();
+                if (box.controller.is_reward == false && box.controller.box_id == 0) {
+                    box.controller.remove(true);
+                } else if (box.controller.is_reward == false && box.controller.box_id == 3) {
+                    box.controller.remove(false);
+                } else {
+                    box.getParent().removeFromParent();
+                }
             }
         }
     },
@@ -317,7 +336,11 @@ var Core = {
                     var box = this.getBoxAtLoc(loc);
                     if (box) {
                         box.controller.remove_gfx();
-                        box.controller.remove();
+                        if (box.controller.box_id == 3) {
+                            box.controller.remove(true);
+                        } else {
+                            box.controller.remove(false);
+                        }
                     }
                 }
             }
@@ -326,12 +349,12 @@ var Core = {
 
     // 补位
     repair_map: function () {
-        for (var n = Core.column_had_removed + 1; n < this.cur_n; n++) {
+        for (var n = this.cur_n - 1; n >= Core.column_had_removed + 1; n--) {
             for (var m = 0; m < Data.height; m++) {
                 var loc = cc.p(n, m);
                 var box = this.getBoxAtLoc(loc);
                 if (box == null) {
-                    var box1 = this.get_box_condition_1(loc);
+                    var box1 = this.get_box_condition_2(loc);
                     if (box1) {
                         this.repair_move(box1.controller.loc, loc);
                     } else {
@@ -339,7 +362,22 @@ var Core = {
                     }
                 }
             }
+
         }
+        //for (var n = Core.column_had_removed + 1; n < this.cur_n; n++) {
+        //    for (var m = 0; m < Data.height; m++) {
+        //        var loc = cc.p(n, m);
+        //        var box = this.getBoxAtLoc(loc);
+        //        if (box == null) {
+        //            var box1 = this.get_box_condition_1(loc);
+        //            if (box1) {
+        //                this.repair_move(box1.controller.loc, loc);
+        //            } else {
+        //                // todo: 没有了的情况需要生成新的
+        //            }
+        //        }
+        //    }
+        //}
     },
     // 补位移动,从loc0移动到loc1: loc0原来非空, loc1原来空
     repair_move: function (loc0, loc1) {
@@ -399,6 +437,34 @@ var Core = {
         return ccb_node;
     },
 
+    // 以一个loc往左找,返回第一个不为空的box, 如果没有则返回null
+    get_box_condition_2: function (loc) {
+        var n = loc.x;
+        do {
+            n--;
+
+            if (n == Core.column_had_removed + 1) {
+                this.create_a_box(loc);
+                return null;
+            }
+
+            if (n == Core.column_had_removed && this.box_lists[n][loc.y] == null) {
+                var ccb_node = this.create_a_box(cc.p(n, loc.y));
+                return ccb_node;
+            }
+
+            var loc1 = cc.p(n, loc.y);
+            var box = this.getBoxAtLoc(loc1);
+            if (box) {
+                return box;
+            }
+        } while (n >= Core.column_had_removed + 1);
+
+
+        return ccb_node;
+    },
+
+
     combine_related_box: function (loc) {
 
         var box = this.getBoxAtLoc(loc);
@@ -407,11 +473,13 @@ var Core = {
 
         if (this.related_boxs_loc) {
             if (this.related_boxs_loc.length >= 3) {
+                var extra_sum = 0;
                 for (var idx in this.related_boxs_loc) {
                     var loc1 = this.related_boxs_loc[idx];
                     var box1 = this.getBoxAtLoc(loc1);
                     if (box1) {
                         if (box1 != box) {
+                            extra_sum += box1.controller.number_value - 1;
                             box1.controller.combine_remove(dest_pos);
                         }
                     }
@@ -419,7 +487,7 @@ var Core = {
 
                 box.controller.delay_scale_big_then_normal();
                 box.controller.remove_gfx();
-                box.controller.number_value = Math.pow(this.related_boxs_loc.length, 2);
+                box.controller.number_value = Math.pow(this.related_boxs_loc.length, 2) + extra_sum;
             }
         }
     },
@@ -435,6 +503,7 @@ var Core = {
         ccb_node.controller.box_id = it;
         ccb_node.controller.number_value = 1;
         ccb_node.controller.refresh_show();
+        ccb_node.controller.is_reward = true;
 
         mid_node.addChild(ccb_node, 0, 1);
         mid_node.setPosition(this.loc2pos(cc.p(loc.x, parseInt(loc.y))));

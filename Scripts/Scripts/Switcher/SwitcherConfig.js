@@ -24,6 +24,17 @@ var SwitcherConfig = {
                             //    {group_id: 'popup_panel'}
                             //]
                         }
+                    },
+                    'popup_group': {
+                        'LMenuInGame': {
+                            ccbi: RES_CCBI_LMenuInGame,
+                            in_timeline: {name: null, time: 0.1},
+                            out_timeline: {name: null, time: 0.1},
+                            zorder: 60,
+                            mutex_layers: [
+                                {group_id: 'core_group'}
+                            ]
+                        }
                     }
                 }
 

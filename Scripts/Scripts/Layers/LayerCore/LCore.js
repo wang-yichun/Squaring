@@ -45,22 +45,48 @@ var LCore = cc.Layer.extend({
 
     setEnabled: function (enabled) {
         this.my_layer_enabled = enabled;
+        this['menu_btn'].setEnabled(enabled);
     },
 
     my_layer_enabled: false,
 
+    my_hp_value: 100,
+    enemy_hp_value: 100,
+
     reset: function () {
         Core.reset();
+        this.refresh_hp();
+    },
+
+    my_hp_add: function (value) {
+        this.my_hp_value += value;
+        this.refresh_hp();
+        if (this.my_hp_value <= 0) {
+            this.game_lose();
+        }
+    },
+
+    enemy_hp_add: function (value) {
+        this.enemy_hp_value += value;
+        this.refresh_hp();
+        if (this.enemy_hp_value <= 0) {
+            this.game_win();
+        }
+    },
+
+    refresh_hp: function () {
+        this['my_hp'].setString(this.my_hp_value);
+        this['enemy_hp'].setString(this.enemy_hp_value);
     },
 
     onTouchesBegan: function (touches, event) {
         Core.onTouchesBegan(touches, event);
     },
     onTouchesMoved: function (touches, event) {
-        Core.onTouchesMoved(touches,event);
+        Core.onTouchesMoved(touches, event);
     },
     onTouchesEnded: function (touches, event) {
-        Core.onTouchesEnded(touches,event);
+        Core.onTouchesEnded(touches, event);
     },
     onTouchesCancelled: function () {
         Core.onTouchesCancelled();
@@ -83,5 +109,40 @@ var LCore = cc.Layer.extend({
     },
     layerOutEnd: function () {
 
+    },
+
+    menu_btn_clicked: function () {
+        Core.game_pause();
+        Switcher.gotoLayer({
+            group_id: 'popup_group',
+            layer_id: 'LMenuInGame',
+            out_delay_time: 0,
+            in_delay_time: 0
+        });
+    },
+    
+    game_lose: function () {
+        Core.game_pause();
+
+        gLMenuInGame['info'].setString('你失败了!');
+
+        Switcher.gotoLayer({
+            group_id: 'popup_group',
+            layer_id: 'LMenuInGame',
+            out_delay_time: 0,
+            in_delay_time: 0
+        });
+    },
+    game_win: function () {
+        Core.game_pause();
+
+        gLMenuInGame['info'].setString('你胜利了!');
+
+        Switcher.gotoLayer({
+            group_id: 'popup_group',
+            layer_id: 'LMenuInGame',
+            out_delay_time: 0,
+            in_delay_time: 0
+        });
     }
 });

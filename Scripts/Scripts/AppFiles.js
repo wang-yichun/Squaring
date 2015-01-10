@@ -30,10 +30,15 @@ var appFiles = [
     // Layers
     'Scripts/Layers/Common/NBox.js',
     'Scripts/Layers/Common/NBox_01.js',
+    'Scripts/Layers/Common/NBox_02.js',
+    'Scripts/Layers/Common/NBox_03.js',
+    'Scripts/Layers/Common/NBox_04.js',
+    'Scripts/Layers/Common/NBox_05.js',
     'Scripts/Layers/Common/NButton.js',
     'Scripts/Layers/Common/SBox.js',
     'Scripts/Layers/LayerCore/Core.js',
     'Scripts/Layers/LayerCore/LCore.js',
+    'Scripts/Layers/LayerCore/LMenuInGame.js',
 
     'Scripts/Layers/CTest.js',
     'Scripts/Layers/NTest.js',

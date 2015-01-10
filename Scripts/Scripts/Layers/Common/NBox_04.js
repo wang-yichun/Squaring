@@ -2,7 +2,7 @@
  * Created by leadprogrammer on 12/29/14.
  */
 
-var NBox_01 = NBox.extend({
+var NBox_04 = NBox.extend({
     // ccb Callback
 
     ctor: function () {
@@ -53,13 +53,13 @@ var NBox_01 = NBox.extend({
                 ),
                 cc.CallFunc.create(
                     function () {
-                        this.remove_gfx_attack();
+                        this.remove_gfx_heal();
                         this.rootNode.getParent().removeFromParent();
 
                         if (hit_myself) {
-                            gLCore.my_hp_add(-this.number_value);
+                            gLCore.my_hp_add(this.number_value);
                         } else {
-                            gLCore.enemy_hp_add(-this.number_value);
+                            gLCore.enemy_hp_add(this.number_value);
                         }
                     }, this
                 )
@@ -67,8 +67,8 @@ var NBox_01 = NBox.extend({
         );
     },
 
-    remove_gfx_attack: function () {
-        var particle = cc.BuilderReader.load(RES_CCBI_PLight_02);
+    remove_gfx_heal: function () {
+        var particle = cc.BuilderReader.load(RES_CCBI_PLight_03);
         var pos = this.rootNode.getParent().getPosition();
         particle.setPosition(pos);
         particle.resetSystem();

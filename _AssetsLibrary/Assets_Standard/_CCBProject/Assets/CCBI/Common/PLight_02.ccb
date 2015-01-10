@@ -107,7 +107,7 @@
 				<key>type</key>
 				<string>Integer</string>
 				<key>value</key>
-				<integer>20</integer>
+				<integer>3</integer>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -183,9 +183,9 @@
 				<key>value</key>
 				<array>
 					<array>
-						<real>0.99215692281723022</real>
-						<real>0.9960784912109375</real>
-						<real>0.99215692281723022</real>
+						<real>1</real>
+						<real>0.17010828852653503</real>
+						<real>0.0</real>
 						<real>1</real>
 					</array>
 					<array>
@@ -204,9 +204,9 @@
 				<key>value</key>
 				<array>
 					<array>
-						<real>0.99215692281723022</real>
-						<real>0.9960784912109375</real>
-						<real>0.99215692281723022</real>
+						<real>1</real>
+						<real>0.61235129833221436</real>
+						<real>0.0</real>
 						<real>1</real>
 					</array>
 					<array>
@@ -284,8 +284,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
