@@ -26,7 +26,7 @@ var Core = {
         this.related_boxs_loc = null;
 
         this.stage.removeAllChildren();
-
+        this.stage.setPosition(cc.p(0,0));
     },
 
     refreshTouchSlow: function () {
