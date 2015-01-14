@@ -43,5 +43,8 @@ var Data = {
         {'ccbi_file': 'Assets/CCBI/Common/NBox_03.ccbi'}, // gold
         {'ccbi_file': 'Assets/CCBI/Common/NBox_04.ccbi'}, // hp
         {'ccbi_file': 'Assets/CCBI/Common/NBox_05.ccbi'} // empty
-    ]
+    ],
+
+    core: undefined,
+    gLCore: undefined
 };

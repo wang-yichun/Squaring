@@ -33,8 +33,10 @@ var LMenuInGame = cc.Layer.extend({
 
     start_btn_clicked: function () {
 
-        Core.reset();
-        Core.prepare_new_game();
+
+        Data.core.reset();
+        Data.core.prepare_new_game();
+        Data.core.game_start();
 
         gLMenuInGame['info'].setString('- 规则 -');
 
@@ -44,6 +46,5 @@ var LMenuInGame = cc.Layer.extend({
             out_delay_time: 0,
             in_delay_time: 0
         });
-        Core.game_start();
     }
 });

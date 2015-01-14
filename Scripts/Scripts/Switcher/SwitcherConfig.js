@@ -12,8 +12,21 @@ var SwitcherConfig = {
                 'object': gSceneA,
                 'layers': {
                     'core_group': {
-                        'LCore': {
-                            ccbi: RES_CCBI_LCore,
+                        //'LCore': {
+                        //    ccbi: RES_CCBI_LCore,
+                        //    in_timeline: {name: null, time: 0.1},
+                        //    out_timeline: {name: null, time: 0.1},
+                        //    zorder: 50
+                        //    //mutex_layers: [
+                        //    //    {group_id: 'group_editer'},
+                        //    //    {group_id: 'top_panel'},
+                        //    //    {group_id: 'left_panel'},
+                        //    //    {group_id: 'popup_panel'}
+                        //    //]
+                        //},
+
+                        'LCore2': {
+                            ccbi: RES_CCBI_LCore2,
                             in_timeline: {name: null, time: 0.1},
                             out_timeline: {name: null, time: 0.1},
                             zorder: 50

@@ -37,7 +37,9 @@ var appFiles = [
     'Scripts/Layers/Common/NButton.js',
     'Scripts/Layers/Common/SBox.js',
     'Scripts/Layers/LayerCore/Core.js',
+    'Scripts/Layers/LayerCore/Core2.js',
     'Scripts/Layers/LayerCore/LCore.js',
+    'Scripts/Layers/LayerCore/LCore2.js',
     'Scripts/Layers/LayerCore/LMenuInGame.js',
 
     'Scripts/Layers/CTest.js',

@@ -20,6 +20,7 @@ var RES_CCBI_SBox_04 = 'Assets/CCBI/Common/SBox_04.ccbi';
 var RES_CCBI_SBox_05 = 'Assets/CCBI/Common/SBox_05.ccbi';
 
 var RES_CCBI_LCore = 'Assets/CCBI/LayerCore/LCore.ccbi';
+var RES_CCBI_LCore2 = 'Assets/CCBI/LayerCore/LCore2.ccbi';
 var RES_CCBI_LMenuInGame = 'Assets/CCBI/LayerCore/LMenuInGame.ccbi';
 
 
@@ -77,6 +78,7 @@ var g_resources = [
 	{src:RES_CCBI_SBox_04},
 	{src:RES_CCBI_SBox_05},
 	{src:RES_CCBI_LCore},
+	{src:RES_CCBI_LCore2},
 	{src:RES_CCBI_LMenuInGame},
 	{src:RES_JSON_enemy},
 	{src:RES_C_gray_fsh},

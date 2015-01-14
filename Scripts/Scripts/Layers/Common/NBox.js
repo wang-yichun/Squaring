@@ -21,40 +21,73 @@ var NBox = cc.Node.extend({
     },
 
     onTouchDown: function () {
-        Core.show_related_box(false);
-        Core.related_boxs_loc = Core.getRelatedBoxLoc(this.loc);
-        Core.show_related_box(true);
+        Data.core.show_related_box(false, this.panel_id);
+        if (this.panel_id == 1) {
+            Data.core.related_boxs_loc = Data.core.getRelatedBoxLoc(this.loc, this.panel_id);
+        } else if (this.panel_id == 2) {
+            Data.core.related_boxs_loc2 = Data.core.getRelatedBoxLoc(this.loc, this.panel_id);
+        } else {
+            cc.log();
+        }
+        Data.core.show_related_box(true, this.panel_id);
     },
 
     onTouchIn: function () {
-        Core.show_related_box(false);
-        Core.related_boxs_loc = Core.getRelatedBoxLoc(this.loc);
-        Core.show_related_box(true);
+        Data.core.show_related_box(false, this.panel_id);
+        if (this.panel_id == 1) {
+            Data.core.related_boxs_loc = Data.core.getRelatedBoxLoc(this.loc, this.panel_id);
+        } else if (this.panel_id == 2) {
+            Data.core.related_boxs_loc2 = Data.core.getRelatedBoxLoc(this.loc, this.panel_id);
+        } else {
+            cc.log();
+        }
+        Data.core.show_related_box(true, this.panel_id);
     },
 
     onTouchInnerDrag: function () {
     },
 
     onTouchHold: function () {
-        cc.log('NBox_01 onTouchHold');
+        cc.log('NBox onTouchHold');
 
-        Core.show_related_box(false);
-        Core.related_boxs_loc = Core.getRelatedBoxLoc(this.loc);
+        Data.core.show_related_box(false, this.panel_id);
+        if (this.panel_id == 1) {
+            Data.core.combine_related_box(this.loc, this.panel_id);
+            Data.core.related_boxs_loc = Data.core.getRelatedBoxLoc(this.loc, this.panel_id);
+        } else if (this.panel_id == 2) {
+            Data.core.combine_related_box(this.loc, this.panel_id);
+            Data.core.related_boxs_loc2 = Data.core.getRelatedBoxLoc(this.loc, this.panel_id);
+        } else {
+            cc.log();
+        }
 
-        Core.combine_related_box(this.loc);
-        Core.related_boxs_loc = Core.getRelatedBoxLoc(this.loc);
+
     },
 
     onTouchOut: function () {
-        Core.show_related_box(false);
-        Core.related_boxs_loc = null;
+        Data.core.show_related_box(false, this.panel_id);
+        if (this.panel_id == 1) {
+            Data.core.related_boxs_loc = null;
+        } else if (this.panel_id == 2){
+            Data.core.related_boxs_loc2 = null;
+        } else {
+            cc.log();
+        }
     },
 
     onTouchUp: function () {
-        Core.show_related_box(false);
-        Core.remove_related_box();
-        Core.related_boxs_loc = null;
-        Core.repair_map();
+        Data.core.show_related_box(false, this.panel_id);
+        if (this.panel_id == 1) {
+            Data.core.remove_related_box();
+            Data.core.related_boxs_loc = null;
+            Data.core.repair_map(1);
+        } else if (this.panel_id == 2) {
+            Data.core.remove_related_box2();
+            Data.core.related_boxs_loc2 = null;
+            Data.core.repair_map(2);
+        } else {
+            cc.log();
+        }
     },
 
     refresh_show: function () {
@@ -132,7 +165,13 @@ var NBox = cc.Node.extend({
 
         var diff = cc.p(Math.random() * 40 - 20, -80);
 
-        Core.remove_box_data(this.loc);
+        if (this.panel_id == 1) {
+            Data.core.remove_box_data(this.loc);
+        } else if (this.panel_id == 2) {
+            Data.core.remove_box_data2(this.loc);
+        } else {
+            cc.log();
+        }
 
         mid_node.runAction(
             cc.Sequence.create(
@@ -162,7 +201,11 @@ var NBox = cc.Node.extend({
     combine_remove: function (dest_pos) {
         var mid_node = this.rootNode.getParent();
 
-        Core.remove_box_data(this.loc);
+        if (this.panel_id == 1) {
+            Data.core.remove_box_data(this.loc);
+        } else {
+            Data.core.remove_box_data2(this.loc);
+        }
 
         mid_node.runAction(
             cc.Sequence.create(
@@ -195,6 +238,10 @@ var NBox = cc.Node.extend({
         particle.setPosition(pos);
         particle.resetSystem();
         particle.setAutoRemoveOnFinish(true);
-        Core.stage.addChild(particle, 300);
+        if (this.panel_id == 1) {
+            Data.core.stage.addChild(particle, 300);
+        } else {
+            Data.core.stage2.addChild(particle, 300);
+        }
     }
 });

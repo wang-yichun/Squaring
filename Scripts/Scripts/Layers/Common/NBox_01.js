@@ -26,14 +26,18 @@ var NBox_01 = NBox.extend({
         var mid_node = this.rootNode.getParent();
 
         if (hit_myself) {
-            var world_pos = gLCore['my_hp'].getParent().convertToWorldSpace(gLCore['my_hp'].getPosition());
-            var dest_pos = gLCore['stage'].convertToNodeSpace(world_pos);
+            var world_pos = Data.gLCore['my_hp'].getParent().convertToWorldSpace(Data.gLCore['my_hp'].getPosition());
+            var dest_pos = Data.gLCore['stage'].convertToNodeSpace(world_pos);
         } else {
-            var world_pos = gLCore['enemy_hp'].getParent().convertToWorldSpace(gLCore['enemy_hp'].getPosition());
-            var dest_pos = gLCore['stage'].convertToNodeSpace(world_pos);
+            var world_pos = Data.gLCore['enemy_hp'].getParent().convertToWorldSpace(Data.gLCore['enemy_hp'].getPosition());
+            var dest_pos = Data.gLCore['stage'].convertToNodeSpace(world_pos);
         }
 
-        Core.remove_box_data(this.loc);
+        if (this.panel_id == 1) {
+            Data.core.remove_box_data(this.loc);
+        } else {
+            Data.core.remove_box_data2(this.loc);
+        }
 
         mid_node.runAction(
             cc.Sequence.create(
@@ -57,9 +61,9 @@ var NBox_01 = NBox.extend({
                         this.rootNode.getParent().removeFromParent();
 
                         if (hit_myself) {
-                            gLCore.my_hp_add(-this.number_value);
+                            Data.gLCore.my_hp_add(-this.number_value);
                         } else {
-                            gLCore.enemy_hp_add(-this.number_value);
+                            Data.gLCore.enemy_hp_add(-this.number_value);
                         }
                     }, this
                 )
@@ -73,6 +77,11 @@ var NBox_01 = NBox.extend({
         particle.setPosition(pos);
         particle.resetSystem();
         particle.setAutoRemoveOnFinish(true);
-        Core.stage.addChild(particle, 300);
+
+        if (this.panel_id == 1) {
+            Data.core.stage.addChild(particle, 300);
+        } else {
+            Data.core.stage2.addChild(particle, 300);
+        }
     }
 });

@@ -4,15 +4,15 @@
 /**
  * Created by leadprogrammer on 11/10/14.
  */
-var gLCore = null;
-var LCore = cc.Layer.extend({
+var gLCore2 = null;
+var LCore2 = cc.Layer.extend({
     // ccb Callback
-    id: "LCore",
+    id: "LCore2",
 
     ctor: function () {
         this._super();
         cc.associateWithNative(this, cc.Layer);
-        gLCore = this;
+        gLCore2 = this;
     },
 
     onDidLoadFromCCB: function () {
@@ -33,7 +33,7 @@ var LCore = cc.Layer.extend({
             this.controller.onTouchesCancelled();
             return true;
         };
-        Core.init(this['stage'], this['stage_gfx']);
+        Core2.init(this['stage'], this['stage_gfx'], this['stage2'], this['stage2_gfx']);
         this.reset();
     },
 
@@ -54,7 +54,7 @@ var LCore = cc.Layer.extend({
     enemy_hp_value: 100,
 
     reset: function () {
-        Core.reset();
+        Core2.reset();
         this.refresh_hp();
     },
 
@@ -80,21 +80,21 @@ var LCore = cc.Layer.extend({
     },
 
     onTouchesBegan: function (touches, event) {
-        Core.onTouchesBegan(touches, event);
+        Core2.onTouchesBegan(touches, event);
     },
     onTouchesMoved: function (touches, event) {
-        Core.onTouchesMoved(touches, event);
+        Core2.onTouchesMoved(touches, event);
     },
     onTouchesEnded: function (touches, event) {
-        Core.onTouchesEnded(touches, event);
+        Core2.onTouchesEnded(touches, event);
     },
     onTouchesCancelled: function () {
-        Core.onTouchesCancelled();
+        Core2.onTouchesCancelled();
     },
 
     layerInCall: function () {
-        Data.gLCore = gLCore;
-        Core.prepare_new_game();
+        Data.gLCore = gLCore2;
+        Core2.prepare_new_game();
     },
     layerInStart: function () {
 
@@ -113,7 +113,7 @@ var LCore = cc.Layer.extend({
     },
 
     menu_btn_clicked: function () {
-        Core.game_pause();
+        Core2.game_pause();
         Switcher.gotoLayer({
             group_id: 'popup_group',
             layer_id: 'LMenuInGame',
@@ -121,9 +121,9 @@ var LCore = cc.Layer.extend({
             in_delay_time: 0
         });
     },
-    
+
     game_lose: function () {
-        Core.game_pause();
+        Core2.game_pause();
 
         gLMenuInGame['info'].setString('你失败了!');
 
@@ -135,7 +135,7 @@ var LCore = cc.Layer.extend({
         });
     },
     game_win: function () {
-        Core.game_pause();
+        Core2.game_pause();
 
         gLMenuInGame['info'].setString('你胜利了!');
 
