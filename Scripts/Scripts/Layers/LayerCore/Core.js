@@ -22,11 +22,11 @@ var Core = {
         this.column_had_removed = 0;
 
         this.touch_slow = false;
-        this.touch_hold_count = -1;
+        this.touch_hold_count = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
         this.related_boxs_loc = null;
 
         this.stage.removeAllChildren();
-        this.stage.setPosition(cc.p(0,0));
+        this.stage.setPosition(cc.p(0, 0));
     },
 
     refreshTouchSlow: function () {
@@ -57,7 +57,7 @@ var Core = {
                 if (box) {
                     box.controller.onTouchDown();
 
-                    Core.touch_hold_count = 0;
+                    Core.touch_hold_count[touches[tid].getId()] = 0;
                 }
             }
 
@@ -82,8 +82,8 @@ var Core = {
                     }
                 }
             } else {
-                if (Core.touch_hold_count >= 0) {
-                    Core.touch_hold_count = -1;
+                if (Core.touch_hold_count[touches[tid].getId()] >= 0) {
+                    Core.touch_hold_count[touches[tid].getId()] = -1;
                 }
 
                 if (old_loc && this.box_lists[old_loc.x]) {
@@ -119,19 +119,21 @@ var Core = {
 
             this.locByTouchesIdxs[touches[tid].getId()] = null;
             this.posByTouchesIdxs[touches[tid].getId()] = null;
+
+            if (Core.touch_hold_count[touches[tid].getId()] >= 0) {
+                Core.touch_hold_count[touches[tid].getId()] = 0;
+            }
         }
         this.refreshTouchSlow();
-        if (Core.touch_hold_count >= 0) {
-            Core.touch_hold_count = 0;
-        }
+
     },
     onTouchesCancelled: function () {
         this.locByTouchesIdxs = new Array(10);
         this.posByTouchesIdxs = new Array(10);
     },
-    callOnTouchesHold: function () {
-        if (this.locByTouchesIdxs[0]) {
-            var loc = this.locByTouchesIdxs[0];
+    callOnTouchesHold: function (touch_idx) {
+        if (this.locByTouchesIdxs[touch_idx]) {
+            var loc = this.locByTouchesIdxs[touch_idx];
             if (this.box_lists[loc.x]) {
                 var box = this.box_lists[loc.x][loc.y];
                 if (box) {
@@ -157,12 +159,14 @@ var Core = {
         var speed = Core.speed;
         if (Core.touch_slow) {
             speed *= .2;
-            if (Core.touch_hold_count >= 0) {
-                Core.touch_hold_count++;
-            }
-            if (Core.touch_hold_count > 15) {
-                Core.callOnTouchesHold();
-                Core.touch_hold_count = -1;
+            for (var touch_idx in Core.touch_hold_count) {
+                if (Core.touch_hold_count[touch_idx] >= 0) {
+                    Core.touch_hold_count[touch_idx]++;
+                }
+                if (Core.touch_hold_count[touch_idx] > 10) {
+                    Core.callOnTouchesHold(touch_idx);
+                    Core.touch_hold_count[touch_idx] = -1;
+                }
             }
         }
         var new_pos = cc.pAdd(ori_pos, cc.p(-speed, 0));

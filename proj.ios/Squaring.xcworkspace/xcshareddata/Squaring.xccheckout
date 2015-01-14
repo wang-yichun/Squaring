@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5008851E-5EA2-4586-BDA0-40B87800C6B5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Squaring</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CF03860704D58BD25CB9F0DB084E84ED98B4E62F</key>
+		<string>github.com:wang-yichun/Squaring.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>proj.ios/Squaring.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CF03860704D58BD25CB9F0DB084E84ED98B4E62F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:wang-yichun/Squaring.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CF03860704D58BD25CB9F0DB084E84ED98B4E62F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CF03860704D58BD25CB9F0DB084E84ED98B4E62F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Squaring</string>
+		</dict>
+	</array>
+</dict>
+</plist>
