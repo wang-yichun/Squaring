@@ -98,10 +98,11 @@ cc.SpriteFrameCache.getInstance().addSpriteFrames(RES_TEX_PLIST_LayerCore);
 
 cc.ShaderCache.getInstance().loadDefaultShaders();
 
+Data.core = Core2;
 var para = {
     'scene_id': 'SceneA',  // 目标场景
     'groups': {             // 每个组的目标层
-        'core_group': 'LCore',
+        'core_group': 'LCore2',
         'popup_group': 'LMenuInGame'
     },
     'out_animation': {func_name: 'scene_out_animation_blackfade', para: [1]},
