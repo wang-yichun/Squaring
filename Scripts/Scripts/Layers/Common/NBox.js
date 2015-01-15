@@ -68,7 +68,7 @@ var NBox = cc.Node.extend({
         Data.core.show_related_box(false, this.panel_id);
         if (this.panel_id == 1) {
             Data.core.related_boxs_loc = null;
-        } else if (this.panel_id == 2){
+        } else if (this.panel_id == 2) {
             Data.core.related_boxs_loc2 = null;
         } else {
             cc.log();
@@ -161,6 +161,9 @@ var NBox = cc.Node.extend({
     },
 
     remove: function () {
+        if (this.rootNode == null) {
+            cc.log();
+        }
         var mid_node = this.rootNode.getParent();
 
         var diff = cc.p(Math.random() * 40 - 20, -80);

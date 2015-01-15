@@ -773,7 +773,7 @@
 										<key>value</key>
 										<array>
 											<real>50</real>
-											<real>23.75</real>
+											<real>23.4375</real>
 											<integer>4</integer>
 										</array>
 									</dict>
@@ -870,7 +870,7 @@
 										<key>type</key>
 										<string>Text</string>
 										<key>value</key>
-										<string>我方Hp:</string>
+										<string>主队Hp:</string>
 									</dict>
 								</array>
 							</dict>
@@ -1118,7 +1118,7 @@
 										<key>type</key>
 										<string>Text</string>
 										<key>value</key>
-										<string>敌方Hp:</string>
+										<string>客队Hp:</string>
 									</dict>
 								</array>
 							</dict>

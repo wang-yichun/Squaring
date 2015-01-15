@@ -60,6 +60,7 @@ var LCore = cc.Layer.extend({
 
     my_hp_add: function (value) {
         this.my_hp_value += value;
+        if (this.my_hp_value > 300) this.my_hp_value = 300;
         this.refresh_hp();
         if (this.my_hp_value <= 0) {
             this.game_lose();
@@ -68,6 +69,7 @@ var LCore = cc.Layer.extend({
 
     enemy_hp_add: function (value) {
         this.enemy_hp_value += value;
+        if (this.enemy_hp_value > 300) this.enemy_hp_value = 300;
         this.refresh_hp();
         if (this.enemy_hp_value <= 0) {
             this.game_win();
@@ -125,7 +127,7 @@ var LCore = cc.Layer.extend({
     game_lose: function () {
         Core.game_pause();
 
-        gLMenuInGame['info'].setString('你失败了!');
+        gLMenuInGame['info'].setString('客方胜利!');
 
         Switcher.gotoLayer({
             group_id: 'popup_group',
@@ -137,7 +139,7 @@ var LCore = cc.Layer.extend({
     game_win: function () {
         Core.game_pause();
 
-        gLMenuInGame['info'].setString('你胜利了!');
+        gLMenuInGame['info'].setString('主方胜利!');
 
         Switcher.gotoLayer({
             group_id: 'popup_group',

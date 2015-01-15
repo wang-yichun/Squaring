@@ -20,17 +20,21 @@ var NBox_01 = NBox.extend({
     setEnabled: function (enabled) {
     },
 
-    remove: function (hit_myself) {
-        if (hit_myself == null) hit_myself = false;
+    remove: function (is_host) {
+        if (is_host == null) {
+            this._super();
+            //Object.getPrototypeOf(this).remove.call(this.rootNode);
+            return;
+        }
 
         var mid_node = this.rootNode.getParent();
 
-        if (hit_myself) {
-            var world_pos = Data.gLCore['my_hp'].getParent().convertToWorldSpace(Data.gLCore['my_hp'].getPosition());
-            var dest_pos = Data.gLCore['stage'].convertToNodeSpace(world_pos);
-        } else {
+        if (is_host) {
             var world_pos = Data.gLCore['enemy_hp'].getParent().convertToWorldSpace(Data.gLCore['enemy_hp'].getPosition());
             var dest_pos = Data.gLCore['stage'].convertToNodeSpace(world_pos);
+        } else {
+            var world_pos = Data.gLCore['my_hp'].getParent().convertToWorldSpace(Data.gLCore['my_hp'].getPosition());
+            var dest_pos = Data.gLCore['stage2'].convertToNodeSpace(world_pos);
         }
 
         if (this.panel_id == 1) {
@@ -60,10 +64,10 @@ var NBox_01 = NBox.extend({
                         this.remove_gfx_attack();
                         this.rootNode.getParent().removeFromParent();
 
-                        if (hit_myself) {
-                            Data.gLCore.my_hp_add(-this.number_value);
-                        } else {
+                        if (is_host) {
                             Data.gLCore.enemy_hp_add(-this.number_value);
+                        } else {
+                            Data.gLCore.my_hp_add(-this.number_value);
                         }
                     }, this
                 )

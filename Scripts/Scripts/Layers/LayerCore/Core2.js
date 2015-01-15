@@ -422,9 +422,9 @@ var Core2 = {
             var box = this.box_lists[loc.x][loc.y];
             if (box) {
                 if (box.controller.is_reward == false && box.controller.box_id == 0) {
-                    box.controller.remove(true);
+                    box.controller.remove(null);
                 } else if (box.controller.is_reward == false && box.controller.box_id == 3) {
-                    box.controller.remove(false);
+                    box.controller.remove(null);
                 } else {
                     box.getParent().removeFromParent();
                 }
@@ -435,10 +435,10 @@ var Core2 = {
         if (this.box2_lists[loc.x]) {
             var box = this.box2_lists[loc.x][loc.y];
             if (box) {
-                if (box.controller.is_reward == false && box.controller.box_id == 0) {
-                    box.controller.remove(true);
-                } else if (box.controller.is_reward == false && box.controller.box_id == 3) {
-                    box.controller.remove(false);
+                if (box.controller.box_id == 0) {
+                    box.controller.remove(null);
+                } else if (box.controller.box_id == 3) {
+                    box.controller.remove(null);
                 } else {
                     box.getParent().removeFromParent();
                 }
@@ -451,27 +451,6 @@ var Core2 = {
             var loc = cc.p(n, m);
             this.remove_box_by_loc2(loc);
             this.remove_box_data2(loc);
-        }
-    },
-
-    remove_box_data2: function (loc) {
-        if (this.box2_lists[loc.x]) {
-            this.box2_lists[loc.x][loc.y] = null;
-        }
-    },
-
-    remove_box_by_loc2: function (loc) {
-        if (this.box2_lists[loc.x]) {
-            var box = this.box2_lists[loc.x][loc.y];
-            if (box) {
-                if (box.controller.is_reward == false && box.controller.box_id == 0) {
-                    box.controller.remove(true);
-                } else if (box.controller.is_reward == false && box.controller.box_id == 3) {
-                    box.controller.remove(false);
-                } else {
-                    box.getParent().removeFromParent();
-                }
-            }
         }
     },
 
@@ -575,10 +554,11 @@ var Core2 = {
                     var box = this.getBoxAtLoc(loc, 1);
                     if (box) {
                         box.controller.remove_gfx();
-                        if (box.controller.box_id == 3) {
+                        if (box.controller.box_id == 3 ||
+                            box.controller.box_id == 0) {
                             box.controller.remove(true);
                         } else {
-                            box.controller.remove(false);
+                            box.controller.remove(null);
                         }
                     }
                 }
@@ -593,10 +573,11 @@ var Core2 = {
                     var box = this.getBoxAtLoc(loc, 2);
                     if (box) {
                         box.controller.remove_gfx();
-                        if (box.controller.box_id == 3) {
-                            box.controller.remove(true);
-                        } else {
+                        if (box.controller.box_id == 3 ||
+                            box.controller.box_id == 0) {
                             box.controller.remove(false);
+                        } else {
+                            box.controller.remove(null);
                         }
                     }
                 }
