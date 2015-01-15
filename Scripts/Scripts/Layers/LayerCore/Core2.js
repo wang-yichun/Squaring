@@ -107,7 +107,7 @@ var Core2 = {
             var loc = this.pos2loc(pos_on_stage);
 
             var pos_on_stage2 = this.stage2.convertTouchToNodeSpace(touches[0]);
-            var loc2 = this.pos2loc(pos_on_stage);
+            var loc2 = this.pos2loc(pos_on_stage2);
 
             var old_loc = this.locByTouchesIdxs[touches[tid].getId()];
 
@@ -142,9 +142,9 @@ var Core2 = {
             } else {
                 if (cc.pointEqualToPoint(old_loc, loc2)) {
                     // 内部移动
-                    if (this.box_lists[loc2.x]) {
-                        var box2 = this.box_lists[loc2.x][loc2.y];
-                        if (box) {
+                    if (this.box2_lists[loc2.x]) {
+                        var box2 = this.box2_lists[loc2.x][loc2.y];
+                        if (box2) {
                             box2.controller.onTouchInnerDrag();
                         }
                     }
@@ -158,8 +158,8 @@ var Core2 = {
                             old_box2.controller.onTouchOut();
                         }
                     }
-                    if (this.box_lists[loc2.x]) {
-                        var new_box2 = this.box_lists[loc2.x][loc2.y];
+                    if (this.box2_lists[loc2.x]) {
+                        var new_box2 = this.box2_lists[loc2.x][loc2.y];
                         if (new_box2) {
                             new_box2.controller.onTouchIn();
                         }
